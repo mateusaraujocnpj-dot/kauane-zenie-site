@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kauane Zenie Studio</title>
+<meta name="description" content="Extensão de cílios e design de sobrancelhas no Balneário de Ipanema, Pontal do Paraná. +4 anos atendendo, +500 olhares transformados, avaliação 5.0 no Google. Agende seu horário com a Kauane Zenie.">
+<meta name="theme-color" content="#4A1530">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="assets/img/icone-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kauane Zenie Studio · Cílios e sobrancelhas">
+<meta property="og:description" content="Extensão de cílios, design de sobrancelhas e curso de extensão de cílios no Balneário de Ipanema, Pontal do Paraná. Agende pelo WhatsApp.">
+<meta property="og:image" content="assets/img/hero-olho.webp">
+<meta property="og:locale" content="pt_BR">
+<link rel="preload" as="image" href="assets/img/hero-olho.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&family=Poiret+One&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: base branca, bordô só em detalhes (títulos em itálico, botões, linhas, bloco de avaliação); hero com foto e véu branco; página do curso em #curso */
+:root{
+  --vinho:#4A1530;
+  --vinho-escuro:#33091F;
+  --rose:#C9768F;
+  --blush:#EBCFD5;
+  --creme:#F7EFEC;
+  --tinta:#3B1A28;
+  --linha:rgba(74,21,48,.14);
+  --display:"Bodoni Moda", "Didot", "Times New Roman", serif;
+  --logo:"Poiret One", "Jost", sans-serif;
+  --body:"Jost", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--creme);color:var(--tinta);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0;text-wrap:balance}
+h1 em,h2 em{font-style:italic;color:var(--rose)}
+p{margin:0}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:6px}
+
+/* ---------- botões ---------- */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:15px 22px 15px 26px;border-radius:999px;font:500 15px/1 var(--body);letter-spacing:.02em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn .seta{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;font-size:14px}
+.btn-claro{background:var(--creme);color:var(--vinho)}
+.btn-claro .seta{background:var(--vinho);color:var(--creme)}
+.btn-vazado{border-color:rgba(247,239,236,.5);color:var(--creme);background:transparent}
+.btn-vazado .seta{background:rgba(247,239,236,.15)}
+.btn-vinho{background:var(--vinho);color:var(--creme)}
+.btn-vinho .seta{background:var(--rose);color:#fff}
+.btn-rose{background:var(--rose);color:#fff}
+.btn-rose .seta{background:rgba(255,255,255,.22)}
+.btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+
+/* ---------- topo ---------- */
+.topo{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(51,9,31,.92);transition:background .3s;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--creme)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.topo.transparente{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.menu-links{display:flex;gap:2px;border:1px solid rgba(247,239,236,.35);border-radius:999px;padding:4px}
+#pagina-curso{padding-top:68px}
+.marca{font-family:var(--logo);font-size:26px;letter-spacing:.01em;text-decoration:none;white-space:nowrap}
+.menu{display:flex;gap:6px;align-items:center}
+.menu a{font-size:14px;text-decoration:none;padding:8px 14px;border-radius:999px;color:rgba(247,239,236,.82)}
+.menu a:hover{background:rgba(247,239,236,.1);color:var(--creme)}
+.menu .agendar{background:var(--creme);color:var(--vinho);font-weight:500}
+.menu .agendar:hover{background:#fff;color:var(--vinho)}
+@media (max-width:820px){.menu-links{display:none}}
+
+/* hero: ver bloco HERO CARD no fim */
+.selo{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--vinho);margin-bottom:20px}
+.selo::before{content:"";width:28px;height:1px;background:var(--rose)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;margin-top:30px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.chips span{font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid var(--linha);color:var(--vinho)}
+.hero-foto{position:relative;justify-self:center;width:min(400px,100%)}
+.arco{aspect-ratio:4/5.2;border-radius:999px 999px 28px 28px;overflow:hidden;position:relative;border:1px solid rgba(235,207,213,.25)}
+.hero-foto .tag{position:absolute;left:-18px;bottom:40px;background:var(--creme);color:var(--vinho);border-radius:18px;padding:14px 18px;box-shadow:0 18px 40px rgba(0,0,0,.25);max-width:210px}
+.tag strong{display:block;font-family:var(--display);font-size:20px;font-weight:400}
+.tag small{font-size:13px;color:#7a5463}
+
+/* placeholders de foto */
+.foto{background:linear-gradient(160deg,#8A3A5C 0%,#5A1C3B 55%,#3E0F27 100%);display:grid;place-items:center;color:rgba(247,239,236,.7);text-align:center;font-size:13px;letter-spacing:.08em;text-transform:uppercase;position:relative}
+.foto.claro{background:linear-gradient(160deg,#F1DCE1 0%,#E2B9C3 100%);color:rgba(74,21,48,.6)}
+.foto svg{width:42%;max-width:120px;opacity:.55;margin-bottom:10px}
+.foto .ph{display:flex;flex-direction:column;align-items:center;padding:12px}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* ---------- seções ---------- */
+section{padding:96px 0;scroll-margin-top:68px}
+.cab{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.cab h2{font-size:clamp(36px,5vw,58px)}
+.cab p{max-width:44ch;color:#6d4a58}
+.rotulo{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-bottom:14px;display:block;font-weight:500}
+@media (max-width:600px){section{padding:72px 0}.cab{margin-bottom:32px}}
+
+/* procedimentos */
+.servicos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border-radius:26px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--linha)}
+.card .foto{aspect-ratio:1/1;border-radius:0}
+.card .corpo{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:26px;color:var(--vinho)}
+.card p{font-size:15px;color:#6d4a58}
+.card ul{margin:2px 0 0;padding:0;list-style:none;font-size:14px;color:#6d4a58;display:grid;gap:4px}
+.card li::before{content:"✦ ";color:var(--rose);font-size:11px}
+.card .acao{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--linha)}
+.card .acao span{font-size:13px;color:#8d6977}
+.card button{background:var(--vinho);color:var(--creme);border:0;border-radius:999px;padding:10px 16px;font:500 13px var(--body);cursor:pointer}
+.card button:hover{background:var(--rose)}
+@media (max-width:1000px){.servicos{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.servicos{grid-template-columns:1fr}.card .foto{aspect-ratio:16/11}}
+
+/* como funciona */
+.escuro{background:var(--vinho);color:var(--creme)}
+.escuro .cab p{color:rgba(247,239,236,.72)}
+.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:p}
+.passo{border:1px solid rgba(235,207,213,.22);border-radius:24px;padding:26px;background:rgba(255,255,255,.03)}
+.passo .n{font-family:var(--display);font-style:italic;font-size:44px;color:var(--rose);line-height:1}
+.passo h3{font-size:24px;margin:14px 0 8px}
+.passo p{font-size:15px;color:rgba(247,239,236,.75)}
+@media (max-width:1000px){.passos{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.passos{grid-template-columns:1fr}}
+
+.cuidados{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+details{border:1px solid rgba(235,207,213,.22);border-radius:20px;padding:4px 22px}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-family:var(--display);font-size:22px;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--rose);font-family:var(--body)}
+details[open] summary::after{content:"–"}
+details ul{margin:0 0 20px;padding-left:18px;color:rgba(247,239,236,.78);font-size:15px;display:grid;gap:6px}
+@media (max-width:760px){.cuidados{grid-template-columns:1fr}}
+
+/* agendamento */
+.agenda{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.agenda .info h2{font-size:clamp(36px,5vw,58px)}
+.agenda .info p{margin-top:18px;color:#6d4a58;max-width:40ch}
+.agenda .info .lista{margin-top:28px;display:grid;gap:14px}
+.agenda .info .lista div{display:flex;gap:14px;align-items:flex-start;font-size:15px}
+.agenda .info .lista b{font-weight:500;color:var(--vinho);display:block}
+.ico{flex:none;width:38px;height:38px;border-radius:50%;background:var(--blush);display:grid;place-items:center;color:var(--vinho)}
+.ico svg{width:18px;height:18px}
+form.caixa{background:#fff;border-radius:30px;padding:34px;border:1px solid var(--linha);box-shadow:0 30px 60px -30px rgba(74,21,48,.35);display:grid;gap:18px}
+.campo{display:grid;gap:7px}
+.campo label,.campo legend{font-size:13px;font-weight:500;color:var(--vinho);letter-spacing:.02em}
+.campo input,.campo select,.campo textarea{font:400 16px var(--body);color:var(--tinta);padding:13px 16px;border-radius:14px;border:1px solid var(--linha);background:var(--creme);width:100%}
+.campo textarea{min-height:84px;resize:vertical}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:2px solid var(--rose);outline-offset:0;border-color:transparent}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+fieldset{border:0;padding:0;margin:0}
+.periodos{display:flex;gap:8px;flex-wrap:wrap}
+.periodos label{flex:1;min-width:90px}
+.periodos input{position:absolute;opacity:0;pointer-events:none}
+.periodos span{display:block;text-align:center;padding:11px 10px;border-radius:12px;border:1px solid var(--linha);font-size:14px;cursor:pointer;background:var(--creme)}
+.periodos input:checked + span{background:var(--vinho);color:var(--creme);border-color:var(--vinho)}
+.periodos input:focus-visible + span{outline:2px solid var(--rose);outline-offset:2px}
+.aviso{font-size:13px;color:#8d6977}
+.form-acao{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.erro{font-size:13px;color:#A3294F;min-height:1em}
+@media (max-width:900px){.agenda{grid-template-columns:1fr}}
+@media (max-width:480px){form.caixa{padding:24px 20px}.duas{grid-template-columns:1fr}}
+
+/* galeria */
+.galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.g-item{padding:0;border:0;background:var(--blush);border-radius:22px;overflow:hidden;aspect-ratio:3/4;cursor:zoom-in}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.g-item:hover img{transform:scale(1.05)}
+.g-item:nth-child(even){transform:translateY(28px)}
+@media (max-width:760px){.galeria{grid-template-columns:repeat(2,1fr);gap:10px}.g-item{border-radius:16px}}
+.galeria{padding-bottom:28px}
+.zoom{position:fixed;inset:0;z-index:50;background:rgba(30,4,17,.92);display:none;place-items:center;padding:20px}
+.zoom.aberto{display:grid}
+.zoom img{max-height:88vh;max-width:100%;border-radius:18px}
+
+/* sobre */
+.sobre{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.sobre .arco{aspect-ratio:4/5;border:0}
+.sobre h2{font-size:clamp(36px,5vw,58px)}
+.sobre p{margin-top:18px;color:#6d4a58;max-width:52ch}
+.numeros{display:flex;gap:36px;margin-top:30px;flex-wrap:wrap}
+.numeros div{border-top:1px solid var(--linha);padding-top:12px;min-width:140px}
+.numeros b{display:block;font-family:var(--display);font-weight:400;font-size:28px;color:var(--vinho)}
+.numeros span{font-size:14px;color:#8d6977}
+@media (max-width:860px){.sobre{grid-template-columns:1fr;gap:36px}.sobre .arco{max-width:340px}}
+
+/* avaliações */
+.avaliar{background:var(--vinho);color:var(--creme);border-radius:36px;padding:64px 40px;text-align:center;position:relative;overflow:hidden}
+.avaliar .marca{font-size:28px;display:block;margin-bottom:18px}
+.avaliar h2{font-size:clamp(40px,7vw,86px)}
+.avaliar h2 em{display:block}
+.estrelas{display:flex;justify-content:center;gap:12px;margin:28px 0 32px;color:var(--creme)}
+.estrelas svg{width:38px;height:38px}
+.avaliar .ctas{justify-content:center;margin-top:0}
+
+/* faixa curso */
+.faixa-curso{display:grid;grid-template-columns:1.2fr .8fr;gap:0;border-radius:36px;overflow:hidden;background:var(--blush)}
+.faixa-curso .txt{padding:56px}
+.faixa-curso h2{font-size:clamp(34px,4.6vw,54px);color:var(--vinho)}
+.faixa-curso p{margin:16px 0 28px;color:#6d4a58;max-width:44ch}
+.faixa-curso .foto{min-height:300px}
+@media (max-width:820px){.faixa-curso{grid-template-columns:1fr}.faixa-curso .txt{padding:36px 26px}}
+
+/* rodapé */
+footer{background:var(--vinho-escuro);color:rgba(247,239,236,.8);padding:64px 0 40px;margin-top:96px}
+footer .grade{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px}
+footer .marca{font-size:32px;color:var(--creme)}
+footer h4{font:500 12px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin:0 0 14px}
+footer a{text-decoration:none;display:block;padding:3px 0}
+footer a:hover{color:var(--creme)}
+footer .base{border-top:1px solid rgba(247,239,236,.12);margin-top:44px;padding-top:22px;font-size:13px;color:rgba(247,239,236,.5)}
+@media (max-width:760px){footer .grade{grid-template-columns:1fr}}
+
+/* whats flutuante */
+.flutuante{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px rgba(51,9,31,.35);text-decoration:none}
+.flutuante svg{width:28px;height:28px}
+
+/* ---------- página do curso ---------- */
+#pagina-curso{display:none}
+body.curso #pagina-inicio{display:none}
+body.curso #pagina-curso{display:block}
+.curso-hero{background:radial-gradient(110% 90% at 15% 0%,#6B2246 0%,var(--vinho) 50%,var(--vinho-escuro) 100%);color:var(--creme);overflow:hidden;position:relative}
+.curso-hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:56px 0 80px}
+.curso-hero h1{font-size:clamp(44px,6.4vw,80px)}
+.voltar{display:flex;width:fit-content;gap:8px;align-items:center;font-size:14px;text-decoration:none;color:var(--blush);margin-bottom:26px}
+.curso-hero .arco{aspect-ratio:4/5}
+@media (max-width:860px){.curso-hero .wrap{grid-template-columns:1fr}.curso-hero .hero-foto{width:min(330px,88%)}}
+.aprende{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.aprende .item{background:#fff;border:1px solid var(--linha);border-radius:24px;padding:28px}
+.aprende .item h3{font-size:24px;color:var(--vinho);margin:14px 0 8px}
+.aprende .item p{font-size:15px;color:#6d4a58}
+@media (max-width:900px){.aprende{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.aprende{grid-template-columns:1fr}}
+.paraquem{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.paraquem div{border:1px solid rgba(235,207,213,.22);border-radius:22px;padding:24px;display:flex;gap:14px;align-items:flex-start}
+.paraquem .ico{background:rgba(235,207,213,.15);color:var(--blush)}
+@media (max-width:700px){.paraquem{grid-template-columns:1fr}}
+
+/* =================== TEMA CLARO (branco + detalhes bordô) =================== */
+:root{--branco:#FFFFFF;--nevoa:#FAF5F6;--texto-suave:#6d4a58}
+body{background:var(--branco)}
+h1 em,h2 em{color:var(--vinho)}
+/* seções que eram escuras ficam claras */
+.escuro{background:var(--nevoa);color:var(--tinta)}
+.escuro .cab p{color:var(--texto-suave)}
+.passo{background:#fff;border-color:var(--linha)}
+.passo h3{color:var(--vinho)}
+.passo p{color:var(--texto-suave)}
+details{border-color:var(--linha);background:#fff}
+summary{color:var(--vinho)}
+details ul{color:var(--texto-suave)}
+.paraquem div{border-color:var(--linha);background:#fff}
+.paraquem .ico{background:var(--blush);color:var(--vinho)}
+.card{border-color:var(--linha)}
+.campo input,.campo select,.campo textarea,.periodos span{background:var(--nevoa)}
+form.caixa{box-shadow:0 30px 60px -36px rgba(74,21,48,.28)}
+/* curso */
+.curso-hero{background:var(--nevoa);color:var(--tinta)}
+.curso-hero h1{color:var(--vinho)}
+.curso-hero h1 em{color:var(--rose)}
+.curso-hero .sub{color:var(--texto-suave)!important}
+.curso-hero .selo{color:var(--vinho)}
+.voltar{color:var(--rose)}
+.curso-hero .btn-claro{background:var(--vinho);color:#fff}
+.curso-hero .btn-claro .seta{background:rgba(255,255,255,.18);color:#fff}
+.curso-hero .btn-vazado{border-color:rgba(74,21,48,.35);color:var(--vinho)}
+.curso-hero .btn-vazado .seta{background:var(--blush)}
+.curso-hero .chips span{border-color:var(--linha);color:var(--vinho)}
+.curso-hero .arco{border-color:var(--linha)}
+/* faixa curso e rodapé */
+.faixa-curso{background:var(--nevoa);border:1px solid var(--linha)}
+footer{background:var(--nevoa);color:var(--texto-suave);border-top:1px solid var(--linha)}
+footer .marca{color:var(--vinho)}
+footer a:hover{color:var(--vinho)}
+footer .base{border-top-color:var(--linha);color:#9b7d89}
+/* detalhe bordô: linha fina sob os rótulos */
+.avaliar h2 em{color:var(--rose)}
+.rotulo{color:var(--vinho);display:inline-flex;align-items:center;gap:10px}
+.rotulo::before{content:"";width:22px;height:1px;background:var(--rose)}
+
+/* =================== HERO CARD (referência Aurelia) =================== */
+.topo{background:rgba(255,255,255,.92);color:var(--vinho);border-bottom:1px solid var(--linha);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.topo .wrap{display:grid;grid-template-columns:1fr auto 1fr;width:calc(100% - 124px);height:72px}
+.topo .marca{grid-column:2;font-size:30px}
+.menu-esq{display:flex}
+.menu-dir{display:flex;justify-content:flex-end;align-items:center;gap:8px}
+.menu-links{display:flex;gap:2px;border:1px solid rgba(74,21,48,.2);border-radius:999px;padding:4px;background:rgba(255,255,255,.5)}
+.menu-links a,.menu-dir a{font-size:14px;text-decoration:none;padding:8px 14px;border-radius:999px;color:var(--vinho)}
+.menu-links a:hover{background:rgba(74,21,48,.07)}
+.menu-dir .icone{width:40px;height:40px;padding:0;display:grid;place-items:center;border:1px solid rgba(74,21,48,.2);background:rgba(255,255,255,.5)}
+.menu-dir .icone svg{width:19px;height:19px}
+.menu-dir .agendar{background:var(--vinho);color:#fff;font-weight:500;padding:11px 18px}
+.topo.transparente{background:transparent;border-bottom-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;color:#fff;top:14px}
+.topo.transparente .menu-links{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.12)}
+.topo.transparente .menu-links a{color:#fff}
+.topo.transparente .menu-links a:hover{background:rgba(255,255,255,.16)}
+.topo.transparente .icone{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.12);color:#fff}
+.topo.transparente .agendar{background:#fff;color:var(--vinho)}
+#pagina-curso{padding-top:0}
+
+.hero{position:relative;overflow:hidden;margin:14px;border-radius:30px;background:radial-gradient(90% 120% at 70% 40%,#9C909C 0%,#988C98 55%,#8C7F8C 100%);color:#fff;min-height:clamp(640px,calc(100svh - 28px),860px);display:flex;padding:0}
+.hero-foto-wrap{position:absolute;right:0;top:0;width:min(64%,980px);transform:translateY(-9%)}
+.hero-bg{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 30%);mask-image:linear-gradient(90deg,transparent 0%,#000 30%)}
+.hero-bg{width:100%;height:auto;display:block}
+.hero-veu{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(44,14,30,.62) 0%,rgba(44,14,30,.38) 34%,rgba(44,14,30,0) 58%),
+  linear-gradient(0deg,rgba(44,14,30,.5) 0%,rgba(44,14,30,0) 42%),
+  linear-gradient(180deg,rgba(44,14,30,.35) 0%,rgba(44,14,30,0) 18%)}
+/* moldura em volta do olho: posição calculada pelo script a partir da foto */
+.moldura{position:absolute;inset:0;z-index:1;pointer-events:none;--fx:-999px;--fy:-999px;--fw:0px;--fh:0px}
+.moldura .lv{position:absolute;top:0;bottom:0;width:1px;background:rgba(255,255,255,.45)}
+.moldura .l1{left:var(--fx)}.moldura .l2{left:calc(var(--fx) + var(--fw))}
+.moldura .lh{position:absolute;left:var(--fx);right:0;height:1px;background:rgba(255,255,255,.45)}
+.moldura .h1{top:var(--fy)}.moldura .h2{top:calc(var(--fy) + var(--fh))}
+.moldura .quadro{position:absolute;left:var(--fx);top:var(--fy);width:var(--fw);height:var(--fh);border:1px solid rgba(255,255,255,.85)}
+.moldura .quadro i{position:absolute;width:0;height:0;border-style:solid}
+.moldura .c1{top:-1px;right:-1px;border-width:0 14px 14px 0;border-color:transparent #fff transparent transparent}
+.moldura .c2{bottom:-1px;left:-1px;border-width:14px 0 0 14px;border-color:transparent transparent transparent #fff}
+.moldura .etiqueta{position:absolute;left:calc(var(--fx) + 22px);top:calc(var(--fy) + var(--fh) + 10px);font-size:14px;letter-spacing:.02em;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.25);white-space:nowrap}
+.hero-conteudo{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:112px 48px 44px}
+.hero-intro{max-width:30ch;font-size:15px;line-height:1.5;color:rgba(255,255,255,.92)}
+.hero-assina{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
+.hero-assina img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.7)}
+.hero-assina b{display:block;font-weight:500;font-size:14px;line-height:1.2}
+.hero-assina small{font-size:12px;color:rgba(255,255,255,.75)}
+.hero-assina .sep{width:1px;height:30px;background:rgba(255,255,255,.4);margin:0 10px}
+.hero-tags small{display:block;position:relative;padding-top:4px}
+.hero-tags small::before{content:"";position:absolute;left:0;top:0;width:44px;height:2px;background:#fff;border-radius:2px}
+.hero h1{font-size:clamp(46px,5.4vw,84px);line-height:1;max-width:12ch;color:#fff;letter-spacing:-.01em}
+.hero h1 em{color:#F6DCE3}
+.hero-sub{margin-top:18px;max-width:38ch;font-size:18px;line-height:1.5;color:rgba(255,255,255,.92)}
+.hero .ctas{margin-top:28px;gap:12px}
+.btn-branco{background:#fff;color:var(--vinho);padding:15px 18px 15px 24px}
+.btn-branco .seta{background:var(--vinho);color:#fff;font-size:18px}
+.btn-contorno{border-color:rgba(255,255,255,.7);color:#fff;padding:15px 18px 15px 24px}
+.btn-contorno .seta{background:rgba(255,255,255,.18);font-size:18px}
+.btn-contorno:hover{background:rgba(255,255,255,.12)}
+
+@media (max-width:1100px){
+  .topo .wrap{grid-template-columns:auto 1fr;width:calc(100% - 40px)}
+  .menu-esq{display:none}
+  .topo .marca{grid-column:1;font-size:26px}
+  .topo.transparente{top:10px}
+  .topo.transparente .wrap{width:calc(100% - 52px)}
+}
+@media (max-width:980px){
+  .hero{margin:10px;border-radius:24px;min-height:0}
+  .hero-foto-wrap{inset:0;transform:none;width:auto}
+  .hero-bg{-webkit-mask-image:none;mask-image:none}
+  .hero-bg{height:100%;object-fit:cover;object-position:62% 30%}
+  .moldura .lv,.moldura .lh{display:none}
+  .hero-veu{background:linear-gradient(0deg,rgba(44,14,30,.86) 0%,rgba(44,14,30,.55) 38%,rgba(44,14,30,0) 62%),linear-gradient(180deg,rgba(44,14,30,.45) 0%,rgba(44,14,30,0) 20%)}
+  .hero-conteudo{padding:96px 22px 26px;gap:0}
+  .hero-topo{display:none}
+  .hero-base{margin-top:min(84vw,360px)}
+  .hero-conteudo{justify-content:flex-end}
+  .hero h1{font-size:clamp(42px,12vw,58px)}
+  .hero-sub{font-size:16px}
+  .hero .btn{flex:1 1 100%;justify-content:space-between}
+}
+
+/* =================== CONTEÚDO DO GUIA =================== */
+.mini-estrelas{color:#F6DCE3;letter-spacing:1px;margin-right:4px}
+.beneficios{background:var(--nevoa)}
+.ben-grade{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.ben{background:#fff;border:1px solid var(--linha);border-radius:22px;padding:24px 22px}
+.ben .n{font-family:var(--display);font-style:italic;font-size:30px;color:var(--rose);line-height:1}
+.ben h3{font-size:22px;color:var(--vinho);margin:14px 0 8px}
+.ben p{font-size:15px;color:var(--texto-suave)}
+@media (max-width:1060px){.ben-grade{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.ben-grade{grid-template-columns:1fr 1fr}.ben:last-child{grid-column:1/-1}}
+@media (max-width:420px){.ben-grade{grid-template-columns:1fr}}
+.categoria+.categoria{margin-top:64px}
+.cat-cab{display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--linha)}
+.cat-foto{width:150px;height:150px;border-radius:999px 999px 22px 22px;overflow:hidden;background:var(--blush)}
+.cat-foto img{width:100%;height:100%;object-fit:cover}
+.cat-cab h3{font-size:clamp(30px,3.6vw,42px);color:var(--vinho)}
+.cat-cab p{margin-top:8px;color:var(--texto-suave);max-width:60ch}
+.cat-info{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.cat-info span{font-size:14px;padding:7px 14px;border-radius:999px;background:var(--nevoa);border:1px solid var(--linha);color:var(--texto-suave)}
+.cat-info b{color:var(--vinho);font-weight:500}
+.precos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.preco-card{border:1px solid var(--linha);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:12px;background:#fff;transition:border-color .2s,box-shadow .2s}
+.preco-card:hover{border-color:rgba(74,21,48,.35);box-shadow:0 18px 40px -28px rgba(74,21,48,.4)}
+.preco-card h4{margin:0;font-family:var(--display);font-weight:400;font-size:25px;color:var(--vinho)}
+.preco-card p{font-size:15px;color:var(--texto-suave);flex:1}
+.valores{display:flex;padding-top:4px}
+.selo-man{font-size:13px;padding:5px 12px;border-radius:999px;background:var(--nevoa);border:1px solid var(--linha);color:var(--texto-suave)}
+.valor{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:15px}
+.valor span{color:var(--texto-suave)}
+.valor b{font-weight:500;color:var(--vinho);font-variant-numeric:tabular-nums}
+.valor b.sem{font-weight:400;color:#9b7d89;font-size:14px}
+.preco-card button{align-self:flex-start;background:var(--vinho);color:#fff;border:0;border-radius:999px;padding:10px 18px;font:500 14px var(--body);cursor:pointer}
+.preco-card button:hover{background:var(--rose)}
+@media (max-width:980px){.precos{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.precos{grid-template-columns:1fr}.cat-cab{grid-template-columns:96px 1fr;gap:18px}.cat-foto{width:96px;height:96px}}
+.regras{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.regra{background:#fff;border:1px solid var(--linha);border-radius:22px;padding:24px;border-top:3px solid var(--vinho)}
+.regra h3{font-size:23px;color:var(--vinho);margin-bottom:8px}
+.regra p{font-size:15px;color:var(--texto-suave)}
+.regra b{color:var(--vinho);font-weight:500}
+@media (max-width:980px){.regras{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.regras{grid-template-columns:1fr}}
+.mapa{color:var(--vinho);font-weight:500;text-decoration:none;border-bottom:1px solid var(--rose)}
+.numeros{gap:28px}
+
+/* =================== PERSONALIZAÇÃO =================== */
+.hero-local{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.06em;padding:7px 14px 7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.1);margin-bottom:14px}
+.so-celular{display:none}
+@media (max-width:980px){.so-celular{display:inline-flex}}
+.hero-local svg{width:15px;height:15px}
+.valores-marca{padding:0;margin-top:18px}
+.vm-grade{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.vm{padding:26px 22px;display:flex;flex-direction:column;gap:2px}
+.vm+.vm{border-left:1px solid var(--linha)}
+.vm b{font-family:var(--display);font-weight:400;font-size:34px;color:var(--vinho);line-height:1.1}
+.vm b span{color:var(--rose);font-size:26px}
+.vm>span{font-size:14px;color:var(--texto-suave)}
+@media (max-width:760px){.vm-grade{grid-template-columns:1fr 1fr}.vm:nth-child(3){border-left:0}.vm:nth-child(n+3){border-top:1px solid var(--linha)}.vm{padding:18px 14px}.vm b{font-size:27px}}
+.efeitos-faixa{overflow:hidden;padding:22px 0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.ef-trilho{display:flex;gap:26px;width:max-content;align-items:center;animation:desliza 48s linear infinite}
+.ef-trilho span{font-family:var(--display);font-style:italic;font-size:26px;color:var(--vinho);white-space:nowrap}
+.ef-trilho i{font-style:normal;color:var(--rose);font-size:14px}
+@keyframes desliza{to{transform:translateX(-50%)}}
+.estilos{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:20px}
+.estilos-tit{font-family:var(--display);font-style:italic;font-size:20px;color:var(--vinho);margin-right:8px}
+.estilo{font:400 14px var(--body);padding:9px 16px;border-radius:999px;border:1px solid var(--linha);background:#fff;color:var(--vinho);cursor:pointer}
+.estilo:hover{border-color:rgba(74,21,48,.4)}
+.estilo.ativo{background:var(--vinho);border-color:var(--vinho);color:#fff}
+.preco-card[hidden]{display:none}
+.nota{display:inline-block;margin-top:6px;font-size:13px;color:#9b7d89}
+.dica{font-size:13px;color:#9b7d89}
+.check{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--texto-suave);cursor:pointer}
+.check input{width:18px;height:18px;accent-color:var(--vinho)}
+
+/* =================== LAYOUT MODERNO =================== */
+section{padding:88px 0}
+.sec-nevoa{background:var(--nevoa)}
+.cab-centro{flex-direction:column;align-items:center;text-align:center;gap:10px}
+.cab-centro p{max-width:46ch}
+.cab-centro .rotulo{margin-bottom:0}
+h2{letter-spacing:-.01em}
+.btn-contorno-v{border-color:rgba(74,21,48,.3);color:var(--vinho);background:#fff}
+.btn-contorno-v .seta{background:var(--blush)}
+.so-desk{display:inline}
+@media (max-width:480px){.so-desk{display:none}}
+.aba{text-transform:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.faixa-stats{padding:22px 0 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat{background:var(--nevoa);border-radius:22px;padding:22px 24px;display:flex;flex-direction:column}
+.stat b{font-family:var(--display);font-weight:400;font-size:clamp(28px,3vw,38px);color:var(--vinho);line-height:1.1}
+.stat b span{color:var(--rose);font-size:.7em}
+.stat>span{font-size:14px;color:var(--texto-suave)}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr;gap:8px}.stat{padding:16px 18px;border-radius:18px}}
+
+.bento-ben{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px}
+.ben-foto{position:relative;border-radius:30px;overflow:hidden;min-height:440px;background:var(--blush)}
+.ben-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ben-etq{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--vinho)}
+.ben-txt{background:var(--nevoa);border-radius:30px;padding:44px;display:flex;flex-direction:column;align-items:flex-start}
+.ben-txt h2{font-size:clamp(34px,4vw,52px);color:var(--tinta)}
+.ben-lista{list-style:none;padding:0;margin:26px 0 30px;display:grid;grid-template-columns:1fr 1fr;gap:18px 26px;width:100%}
+.ben-lista li{display:flex;gap:14px;align-items:flex-start}
+.ben-lista i{font-style:normal;flex:none;width:36px;height:36px;border-radius:50%;background:#fff;border:1px solid var(--linha);display:grid;place-items:center;font-size:12px;color:var(--vinho);font-weight:500}
+.ben-lista b{display:block;font-weight:500;color:var(--vinho);font-size:16px}
+.ben-lista span{font-size:14px;color:var(--texto-suave)}
+@media (max-width:900px){.bento-ben{grid-template-columns:1fr}.ben-foto{min-height:300px}.ben-txt{padding:30px 24px}}
+@media (max-width:520px){.ben-lista{grid-template-columns:1fr}}
+
+.abas{display:flex;justify-content:center;gap:6px;margin:0 auto 22px;background:#fff;border:1px solid var(--linha);border-radius:999px;padding:5px;width:fit-content}
+.aba{font:500 15px var(--body);border:0;background:transparent;color:var(--vinho);padding:12px 22px;border-radius:999px;cursor:pointer;display:flex;gap:8px;align-items:center}
+.aba small{font-size:12px;background:var(--nevoa);border-radius:999px;padding:2px 8px}
+.aba.ativa{background:var(--vinho);color:#fff}
+.aba.ativa small{background:rgba(255,255,255,.18)}
+.estilos{justify-content:center}
+.painel{background:#fff;border-radius:30px;padding:30px;border:1px solid var(--linha)}
+.menu-lista{display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
+.item{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:18px;padding:20px 4px;border-bottom:1px solid var(--linha);cursor:pointer;width:100%}
+.item:focus-visible{outline:2px solid var(--rose);outline-offset:2px;border-radius:12px}
+.item[hidden]{display:none}
+.it-txt{flex:1;display:flex;flex-direction:column;gap:4px}
+.it-txt b{font-family:var(--display);font-weight:400;font-size:23px;color:var(--vinho)}
+.it-txt>span:not(.selo-man){font-size:14px;color:var(--texto-suave);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.it-txt .selo-man{align-self:flex-start;margin-top:6px;font-size:12px;padding:3px 10px}
+.it-ir{flex:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--linha);display:grid;place-items:center;color:var(--vinho);transition:background .2s,color .2s,transform .2s}
+.item:hover .it-ir{background:var(--vinho);color:#fff;transform:translateX(3px)}
+.painel-nota{text-align:center;margin-top:20px;font-size:14px;color:var(--texto-suave)}
+@media (max-width:860px){.menu-lista{grid-template-columns:1fr}.painel{padding:14px 18px;border-radius:24px}.it-txt b{font-size:21px}}
+.cap{text-transform:capitalize}
+@media (min-width:481px){.cap{text-transform:none}}
+@media (max-width:480px){.aba{padding:11px 14px;font-size:14px}.estilos{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-20px;padding-right:20px}.estilo{flex:none}}
+
+.linha-tempo{list-style:none;padding:0;margin:0 0 72px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.linha-tempo::before{content:"";position:absolute;left:12%;right:12%;top:27px;height:1px;background:repeating-linear-gradient(90deg,var(--rose) 0 6px,transparent 6px 12px)}
+.linha-tempo li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;position:relative}
+.bola{width:54px;height:54px;border-radius:50%;background:var(--vinho);color:#fff;display:grid;place-items:center;font-family:var(--display);font-size:22px;margin-bottom:8px;box-shadow:0 0 0 8px #fff}
+.linha-tempo b{font-family:var(--display);font-weight:400;font-size:22px;color:var(--vinho)}
+.linha-tempo li>span:last-child{font-size:14px;color:var(--texto-suave)}
+@media (max-width:760px){.linha-tempo{grid-template-columns:1fr;gap:0;margin-bottom:56px}.linha-tempo::before{left:27px;right:auto;top:20px;bottom:20px;width:1px;height:auto;background:repeating-linear-gradient(180deg,var(--rose) 0 6px,transparent 6px 12px)}.linha-tempo li{display:grid;grid-template-columns:54px 1fr;column-gap:16px;row-gap:0;text-align:left;align-items:center;padding:10px 0}.bola{margin:0;grid-row:1/3}.linha-tempo li b{align-self:end}.linha-tempo li>span:last-child{align-self:start}}
+
+.bento-info{display:grid;grid-template-columns:.8fr 1.2fr;gap:16px;align-items:start}
+.info-cab{background:var(--vinho);color:#fff;border-radius:30px;padding:40px;position:sticky;top:96px}
+.info-cab .rotulo{color:var(--blush)}
+.info-cab h2{font-size:clamp(32px,3.6vw,46px)}
+.info-cab h2 em{color:var(--blush)}
+.info-cab p{margin-top:14px;color:rgba(255,255,255,.8)}
+.faq{display:grid;gap:10px}
+.faq details{background:var(--nevoa);border:0;border-radius:20px;padding:2px 24px}
+.faq summary{font-size:21px;padding:18px 0}
+.faq details p{padding:0 0 20px;color:var(--texto-suave);font-size:15px}
+@media (max-width:900px){.bento-info{grid-template-columns:1fr}.info-cab{position:static;padding:30px 24px}}
+
+.agenda .info .lista{background:#fff;border-radius:24px;padding:22px;border:1px solid var(--linha)}
+
+.galeria .g-item:nth-child(even){transform:none}
+@media (max-width:760px){
+  .galeria{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin-right:-20px;padding-right:20px;scrollbar-width:none;padding-bottom:0}
+  .galeria .g-item{flex:0 0 72%;scroll-snap-align:start}
+}
+
+.bento-sobre{display:grid;grid-template-columns:.85fr 1fr 1fr 1fr;grid-template-rows:auto auto;gap:16px}
+.bs-foto{grid-row:1/3;border-radius:30px;overflow:hidden;min-height:480px;position:relative}
+.bs-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.bs-txt{grid-column:2/5;background:var(--nevoa);border-radius:30px;padding:40px}
+.bs-txt h2{font-size:clamp(34px,4vw,52px)}
+.bs-txt p{margin-top:14px;color:var(--texto-suave);max-width:62ch}
+.bs-num{background:var(--nevoa);border-radius:26px;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;min-height:150px}
+.bs-num b{font-family:var(--display);font-weight:400;font-size:46px;color:var(--vinho);line-height:1}
+.bs-num span{font-size:14px;color:var(--texto-suave);margin-top:6px}
+.bs-num.destaque{background:var(--blush)}
+@media (max-width:900px){.bento-sobre{grid-template-columns:1fr 1fr 1fr}.bs-foto{grid-row:auto;grid-column:1/-1;min-height:380px}.bs-txt{grid-column:1/-1;padding:30px 24px}.bs-num{min-height:0;padding:18px}.bs-num b{font-size:32px}}
+@media (max-width:480px){.bs-num span{font-size:12px}}
+
+.bento-final{display:grid;grid-template-columns:1fr;gap:16px}
+.bento-final .card-curso{min-height:340px}
+.bento-final .cc-txt b{font-size:clamp(28px,3.4vw,42px);max-width:18ch}
+.bento-final .avaliar{padding:52px 36px;border-radius:30px}
+.av-pre{font-size:17px;color:var(--blush)}
+.bento-final .avaliar h2{font-size:clamp(38px,5vw,68px)}
+.bento-final .estrelas{font-size:30px;letter-spacing:8px;color:#fff;margin:22px 0 26px}
+.card-curso{position:relative;border-radius:30px;overflow:hidden;min-height:380px;display:flex;align-items:flex-end;text-decoration:none;color:#fff}
+.card-curso img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .6s}
+.card-curso:hover img{transform:scale(1.04)}
+.cc-veu{position:absolute;inset:0;background:linear-gradient(0deg,rgba(44,14,30,.85) 0%,rgba(44,14,30,0) 60%)}
+.cc-txt{position:relative;padding:28px;display:flex;flex-direction:column;gap:10px}
+.cc-tag{align-self:flex-start;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.2);backdrop-filter:blur(8px);padding:6px 12px;border-radius:999px}
+.cc-txt b{font-family:var(--display);font-weight:400;font-size:30px;line-height:1.1}
+.cc-link{font-weight:500;font-size:15px;display:inline-flex;gap:8px;align-items:center}
+.cc-link i{font-style:normal;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--vinho);display:grid;place-items:center}
+@media (max-width:900px){.bento-final{grid-template-columns:1fr}.bento-final .avaliar{padding:40px 22px}}
+
+.barra-mobile{display:none}
+@media (max-width:760px){
+  .barra-mobile{display:flex;gap:8px;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;padding:8px;border-radius:999px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 14px 34px rgba(51,9,31,.22);transform:translateY(140%);transition:transform .35s}
+  body.rolou .barra-mobile{transform:none}
+  body.curso .barra-mobile{display:none}
+  .bm-agendar{flex:1;display:grid;place-items:center;background:var(--vinho);color:#fff;text-decoration:none;font-weight:500;border-radius:999px;padding:14px}
+  .bm-whats{width:50px;height:50px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center}
+  .bm-whats svg{width:24px;height:24px}
+  .flutuante{display:none}
+  footer{padding-bottom:110px}
+}
+@media (max-width:600px){section{padding:64px 0}}
+
+/* =================== EFEITOS COM FOTO =================== */
+.pular{display:flex;justify-content:center;gap:8px;margin:-16px 0 36px}
+.pular a{text-decoration:none;font-size:14px;font-weight:500;color:var(--vinho);background:#fff;border:1px solid var(--linha);padding:10px 20px;border-radius:999px}
+.pular a:hover{background:var(--vinho);color:#fff}
+.grupo-tit{font-size:clamp(28px,3vw,36px);color:var(--vinho);margin:0 0 18px;scroll-margin-top:90px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.grupo-tit small{font-family:var(--body);font-size:14px;color:var(--texto-suave)}
+.efeitos+.grupo-tit{margin-top:56px}
+.efeitos{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+#lista-sobrancelhas{grid-template-columns:repeat(3,1fr)}
+.efeito{all:unset;box-sizing:border-box;cursor:pointer;background:#fff;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--linha);transition:transform .25s,box-shadow .25s}
+.efeito:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(74,21,48,.45)}
+.efeito:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+.ef-foto{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--blush)}
+#lista-sobrancelhas .ef-foto{aspect-ratio:16/11}
+.ef-foto img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.efeito:hover .ef-foto img{transform:scale(1.05)}
+.ef-selo{position:absolute;left:10px;top:10px;font-style:normal;font-size:11px;font-weight:500;letter-spacing:.02em;background:rgba(255,255,255,.92);color:var(--vinho);padding:5px 10px;border-radius:999px}
+.ef-corpo{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.ef-corpo b{font-family:var(--display);font-weight:400;font-size:21px;color:var(--vinho);line-height:1.15}
+.ef-desc{font-size:13px;line-height:1.45;color:var(--texto-suave);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ef-btn{margin-top:auto;padding-top:8px;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:500;color:var(--vinho)}
+.ef-btn i{font-style:normal;width:32px;height:32px;border-radius:50%;background:var(--vinho);color:#fff;display:grid;place-items:center;transition:transform .2s}
+.efeito:hover .ef-btn i{transform:translateX(3px)}
+@media (max-width:1100px){.efeitos{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:860px){.efeitos{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){
+  .efeitos,#lista-sobrancelhas{grid-template-columns:1fr 1fr;gap:10px}
+  .efeito{border-radius:18px}
+  .ef-corpo{padding:10px 12px 12px}
+  .ef-corpo b{font-size:18px}
+  .ef-desc{display:none}
+  .ef-btn{font-size:13px}.ef-btn i{width:28px;height:28px}
+  #lista-sobrancelhas .ef-foto{aspect-ratio:4/5}
+  #lista-sobrancelhas .efeito:last-child{grid-column:1/-1}
+  #lista-sobrancelhas .efeito:last-child .ef-foto{aspect-ratio:16/9}
+}
+
+/* =================== GALERIA NOVA =================== */
+.gal-sub{margin-top:10px;color:var(--texto-suave);font-size:15px}
+.galeria{display:grid !important;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px;overflow:visible !important;margin-right:0 !important;padding:0 !important}
+.galeria .g-item{aspect-ratio:auto !important;height:100%;flex:none !important;transform:none !important;border-radius:22px;position:relative}
+.galeria .g-item:nth-child(1){grid-column:span 2;grid-row:span 2}
+.galeria .g-item:nth-child(6){grid-column:span 2}
+.galeria .g-item::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(74,21,48,.08)}
+.galeria .g-item:nth-child(1)::before{content:"Toque para ampliar";position:absolute;left:14px;bottom:14px;z-index:1;font-size:12px;background:rgba(255,255,255,.9);color:var(--vinho);padding:6px 12px;border-radius:999px}
+@media (max-width:760px){
+  .galeria{grid-template-columns:1fr 1fr;grid-auto-rows:46vw;gap:8px}
+  .galeria .g-item{border-radius:16px}
+  .galeria .g-item:nth-child(1){grid-column:span 2;grid-row:span 2}
+  .galeria .g-item:nth-child(6){grid-column:span 2;grid-row:span 1}
+}
+.zoom{padding:56px 12px}
+.z-fechar{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:0;background:var(--creme);color:var(--vinho);font-size:24px;cursor:pointer}
+.z-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.88);color:var(--vinho);font-size:30px;line-height:1;cursor:pointer;display:grid;place-items:center}
+.z-ant{left:16px}.z-prox{right:16px}
+.z-cont{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#fff;font-size:14px;background:rgba(0,0,0,.35);padding:6px 14px;border-radius:999px}
+.zoom img{max-height:80vh}
+@media (max-width:760px){.z-nav{width:42px;height:42px;font-size:26px}.z-ant{left:8px}.z-prox{right:8px}}
+
+/* =================== LOGO OFICIAL =================== */
+.marca-logo{display:block;line-height:0}
+.marca-logo img{height:34px;width:auto}
+.logo-branco{display:none}
+.topo.transparente .logo-cor{display:none}
+.topo.transparente .logo-branco{display:block}
+.logo-rodape{height:40px;width:auto}
+@media (max-width:980px){.marca-logo img{height:26px}}
+
+/* =================== CARDS DE EFEITO (referência) =================== */
+.efeitos{grid-template-columns:repeat(5,1fr);gap:14px}
+#lista-sobrancelhas{grid-template-columns:repeat(3,1fr)}
+.ef-v2{position:relative;display:block;aspect-ratio:3/4;border:0;border-radius:22px;overflow:hidden;background:#2b0a1a;color:#fff}
+#lista-sobrancelhas .ef-v2{aspect-ratio:4/3.6}
+.ef-info b{overflow-wrap:anywhere}
+.ef-v2>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.ef-v2:hover>img{transform:scale(1.06)}
+.ef-sombra{position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,6,18,.92) 0%,rgba(30,6,18,.55) 34%,rgba(30,6,18,0) 62%)}
+.ef-v2 .ef-selo{z-index:2}
+.ef-info{position:absolute;left:0;right:0;bottom:0;padding:16px 16px 16px;display:flex;flex-direction:column;gap:8px;z-index:1}
+.ef-info b{font-family:"Oswald","Arial Narrow",sans-serif;font-weight:600;text-transform:uppercase;font-size:clamp(24px,2.1vw,32px);line-height:.98;letter-spacing:.005em;color:#fff}
+#lista-sobrancelhas .ef-info b{font-size:clamp(28px,3vw,42px)}
+.ef-linha{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.ef-v2 .ef-desc{display:block;-webkit-line-clamp:unset;font-size:13px;line-height:1.35;color:rgba(255,255,255,.88);max-width:20ch}
+.ef-linha i{flex:none;font-style:normal;width:34px;height:34px;border-radius:50%;background:#E8A9B8;color:var(--vinho);display:grid;place-items:center;font-size:15px;transition:transform .2s}
+.ef-v2:hover .ef-linha i{transform:translateX(3px)}
+.ef-v2:hover{transform:translateY(-4px);box-shadow:0 26px 44px -26px rgba(74,21,48,.6)}
+@media (max-width:1100px){.efeitos{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:860px){.efeitos{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){
+  .efeitos,#lista-sobrancelhas{grid-template-columns:1fr 1fr;gap:10px}
+  .ef-v2{border-radius:18px}
+  #lista-sobrancelhas .ef-v2{aspect-ratio:3/4}
+  #lista-sobrancelhas .ef-v2:last-child{grid-column:1/-1;aspect-ratio:16/10}
+  .ef-info{padding:12px}
+  .ef-info b{font-size:22px}
+  #lista-sobrancelhas .ef-info b{font-size:21px}
+  .ef-v2 .ef-desc{font-size:12px}
+  .ef-linha i{width:30px;height:30px}
+}
+
+/* cards: letras normais e cílios sempre visíveis */
+.ef-info b{font-family:var(--display);font-weight:400;text-transform:none;letter-spacing:0;line-height:1.05;font-size:clamp(22px,1.9vw,28px)}
+#lista-sobrancelhas .ef-info b{font-size:clamp(26px,2.4vw,34px)}
+.ef-sombra{background:linear-gradient(0deg,rgba(30,6,18,.88) 0%,rgba(30,6,18,.5) 26%,rgba(30,6,18,0) 46%)}
+.ef-info{gap:6px}
+.ef-v2 .ef-desc{font-size:12.5px}
+@media (max-width:640px){.ef-info b{font-size:20px}#lista-sobrancelhas .ef-info b{font-size:21px}}
+
+/* card sem foto */
+.ef-v2.sem-foto{background:linear-gradient(160deg,#F3DCE2 0%,#E3B9C5 100%)}
+.ef-sem-foto{position:absolute;inset:0;display:grid;place-items:center;padding-bottom:30%;font-size:44px;color:rgba(74,21,48,.35)}
+/* celular: texto embaixo da foto, cílios sempre visíveis */
+@media (max-width:640px){
+  .ef-v2{aspect-ratio:auto !important;display:flex;flex-direction:column;background:#fff;border:1px solid var(--linha);color:var(--vinho)}
+  .ef-v2>img{position:static;width:100%;aspect-ratio:1/1;height:auto}
+  .ef-v2.sem-foto .ef-sem-foto{position:static;aspect-ratio:1/1;padding:0;background:linear-gradient(160deg,#F3DCE2 0%,#E3B9C5 100%)}
+  .ef-v2.sem-foto{background:#fff}
+  .ef-sombra{display:none}
+  .ef-info{position:static;padding:10px 12px 12px;gap:6px;flex:1}
+  .ef-info b{color:var(--vinho);font-size:18px !important}
+  .ef-linha{align-items:center}
+  .ef-v2 .ef-desc{color:var(--texto-suave);font-size:12px}
+  .ef-linha i{background:var(--vinho);color:#fff}
+  #lista-sobrancelhas .ef-v2:last-child>img{aspect-ratio:16/10}
+}
+
+/* sobrancelhas: 4 cards iguais aos de cílios */
+#lista-sobrancelhas{grid-template-columns:repeat(4,1fr)}
+#lista-sobrancelhas .ef-v2{aspect-ratio:3/4}
+#lista-sobrancelhas .ef-info b{font-size:clamp(22px,1.9vw,28px)}
+@media (max-width:860px){#lista-sobrancelhas{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){
+  #lista-sobrancelhas .ef-v2:last-child{grid-column:auto}
+  #lista-sobrancelhas .ef-v2:last-child>img,#lista-sobrancelhas .ef-v2>img{aspect-ratio:1/1}
+}
+
+/* =================== PÁGINA DO CURSO =================== */
+.curso-capa{position:relative;overflow:hidden;margin:14px;border-radius:30px;min-height:clamp(560px,calc(100svh - 28px),780px);display:flex;color:#fff;padding:0;background:#3a1428}
+.cc-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.cc-veu2{position:absolute;inset:0;background:linear-gradient(90deg,rgba(44,14,30,.85) 0%,rgba(44,14,30,.5) 45%,rgba(44,14,30,.1) 75%),linear-gradient(0deg,rgba(44,14,30,.6) 0%,rgba(44,14,30,0) 45%)}
+.cc-conteudo{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;justify-content:space-between;padding:110px 48px 46px;gap:30px}
+.voltar-claro{color:#fff;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.5);padding:8px 16px;border-radius:999px;width:fit-content;background:rgba(255,255,255,.1)}
+.cc-selo{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.18);backdrop-filter:blur(8px);padding:7px 14px;border-radius:999px;margin-bottom:18px}
+.curso-capa h1{font-size:clamp(44px,6vw,90px);line-height:1;max-width:11ch;color:#fff}
+.curso-capa h1 em{color:#F6DCE3}
+.cc-sub{margin-top:18px;max-width:42ch;font-size:18px;color:rgba(255,255,255,.9)}
+@media (max-width:760px){.curso-capa{margin:10px;border-radius:24px;min-height:640px}.cc-bg{object-position:60% 20%}.cc-veu2{background:linear-gradient(0deg,rgba(44,14,30,.95) 0%,rgba(44,14,30,.7) 45%,rgba(44,14,30,.15) 75%)}.cc-conteudo{padding:96px 22px 26px}.cc-sub{font-size:16px}.curso-capa .btn{flex:1 1 100%;justify-content:space-between}}
+.curso-duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.duo-card{background:var(--nevoa);border-radius:30px;padding:40px}
+.duo-card.escuro-v{background:var(--vinho);color:#fff}
+.duo-tag{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:#fff;color:var(--vinho)}
+.escuro-v .duo-tag{background:rgba(255,255,255,.15);color:#fff}
+.duo-card h3{font-size:clamp(28px,3vw,38px);margin:18px 0 10px;color:var(--vinho)}
+.escuro-v h3{color:#fff}
+.duo-card p{color:var(--texto-suave)}
+.escuro-v p{color:rgba(255,255,255,.82)}
+@media (max-width:760px){.curso-duo{grid-template-columns:1fr}.duo-card{padding:28px 22px}}
+.inclui{list-style:none;padding:0;margin:22px 0;display:grid;gap:14px}
+.inclui li{position:relative;padding-left:30px;color:var(--texto-suave)}
+.inclui li::before{content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;background:var(--vinho);color:#fff;font-size:11px;display:grid;place-items:center}
+.inclui b{color:var(--vinho);font-weight:500}
+.diferencial{background:var(--blush);border-radius:20px;padding:20px 22px;width:100%}
+.diferencial span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--vinho);font-weight:500}
+.diferencial p{margin-top:6px;color:var(--tinta);font-size:15px}
+.preco-curso{background:var(--vinho);color:#fff;border-radius:34px;padding:48px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+.preco-curso h2{font-size:clamp(32px,4vw,52px);color:#fff}
+.preco-curso h2 em{color:#F6DCE3}
+.preco-curso>div>p{margin-top:12px;color:rgba(255,255,255,.75)}
+.pc-valor{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.pc-num{font-family:var(--display);font-size:64px;line-height:1}
+.pc-num small{font-size:24px;margin-right:6px;vertical-align:top}
+.pc-valor ul{list-style:none;padding:0;margin:0;display:grid;gap:6px;color:rgba(255,255,255,.85);font-size:15px}
+.pc-valor b{color:#fff;font-weight:500}
+@media (max-width:860px){.preco-curso{grid-template-columns:1fr;padding:32px 22px}}
+
+.alunas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.aluna{margin:0;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--blush)}
+.aluna img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.aluna:hover img{transform:scale(1.04)}
+@media (max-width:640px){.alunas{grid-template-columns:1fr 1fr;gap:8px}.aluna{border-radius:16px}.aluna:first-child{grid-column:1/-1}}
+#alunas{padding-bottom:40px}
+
+.aluna{position:relative}
+.aluna::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,6,18,.78) 0%,rgba(30,6,18,0) 32%);pointer-events:none}
+.aluna figcaption{position:absolute;left:16px;right:16px;bottom:14px;z-index:1;color:#fff;display:flex;flex-direction:column}
+.aluna figcaption b{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.15}
+.aluna figcaption span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#F6DCE3;margin-top:2px}
+@media (max-width:640px){.aluna figcaption{left:10px;right:10px;bottom:9px}.aluna figcaption b{font-size:15px}.aluna figcaption span{font-size:10px}.aluna:first-child figcaption b{font-size:20px}}
+
+/* =================== CAIXA 3D =================== */
+.kit3d{height:280vh;padding:0;position:relative}
+.palco{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:clamp(60px,14vh,140px);overflow:hidden;padding:80px 20px 20px}
+.k3-txt{text-align:center;position:relative;z-index:3;min-height:9.5em}
+.k3-txt h2{font-size:clamp(34px,4.6vw,58px)}
+.k3-txt p{margin-top:8px;color:var(--texto-suave);transition:opacity .3s}
+.cena{--w:min(420px,74vw);--d:calc(var(--w) * .7);--h:calc(var(--w) * .2);perspective:1600px;width:var(--w);height:calc(var(--d) * 1.15);display:grid;place-items:center;position:relative}
+.caixa3d{--rx:62deg;--rz:-34deg;--abre:0deg;--s:.92;position:relative;width:var(--w);height:var(--d);transform-style:preserve-3d;transform:scale(var(--s)) rotateX(var(--rx)) rotateZ(var(--rz))}
+.sombra-caixa{opacity:calc(1 - var(--plano,0));position:absolute;left:50%;top:58%;width:calc(var(--w) * 1.05);height:calc(var(--d) * .55);transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(74,21,48,.28),rgba(74,21,48,0));filter:blur(8px)}
+.fc{position:absolute;backface-visibility:visible}
+.chao{inset:0;background:#f3eef1;overflow:hidden;box-shadow:inset 0 0 0 6px #fff}
+.chao img{width:100%;height:100%;object-fit:cover}
+.caixa3d{box-shadow:none}
+.p-frente,.p-tras{left:0;width:var(--w);height:var(--h);background:linear-gradient(180deg,#fff 0%,#f1e9ec 100%)}
+.p-frente{top:var(--d);transform-origin:top;transform:rotateX(90deg)}
+.p-tras{top:calc(var(--h) * -1);transform-origin:bottom;transform:rotateX(-90deg);background:#efe6ea}
+.p-esq,.p-dir{top:0;width:var(--h);height:var(--d);background:linear-gradient(90deg,#f6f0f2,#e9dfe4)}
+.p-esq{left:calc(var(--h) * -1);transform-origin:right;transform:rotateY(90deg)}
+.p-dir{left:var(--w);transform-origin:left;transform:rotateY(-90deg)}
+.fita{position:absolute;right:18%;top:0;width:8%;height:100%;background:linear-gradient(90deg,#C9A08F,#B88778)}
+.tampa{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:50% 0;transform:translateZ(calc(var(--h) + 1px)) rotateX(var(--abre))}
+.t-topo{inset:0;background:linear-gradient(135deg,#ffffff 0%,#f7f2f4 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;box-shadow:inset 0 0 0 1px rgba(74,21,48,.06);backface-visibility:hidden}
+.t-topo img{width:62%;height:auto;filter:saturate(.8) brightness(1.25) sepia(.25)}
+.t-topo span{font-size:calc(var(--w) * .026);letter-spacing:.5em;color:#8f5a6a;padding-left:.5em}
+.t-baixo{inset:0;background:#E7DDEA;transform:rotateY(180deg);backface-visibility:hidden}
+.t-saia{left:0;top:var(--d);width:var(--w);height:calc(var(--h) * .35);background:#f4eef1;transform-origin:top;transform:rotateX(-90deg)}
+@media (prefers-reduced-motion:reduce){.kit3d{height:auto}.palco{position:static;height:auto;padding:80px 20px}}
+
+/* laço da caixa (sem abrir) */
+.caixa3d{--laco:0}
+.fita-topo{left:76%;top:0;width:7%;height:100%;background:linear-gradient(90deg,#D4AC9D,#BC8B7C);transform-origin:50% 50%;transform:translateZ(1px) scaleY(calc(1 - var(--laco)));opacity:calc(1 - var(--laco) * .3)}
+.fita{transform-origin:50% 0;transform:scaleY(calc(1 - var(--laco)))}
+.p-tras .fita{right:auto;left:18%}
+.laco{position:absolute;left:79.5%;top:50%;width:calc(var(--w) * .26);transform-style:preserve-3d;
+  transform:translate(-50%,-50%) translateZ(calc(4px + var(--laco) * var(--w) * .5)) rotateZ(calc(var(--laco) * 40deg)) rotateX(calc(var(--laco) * -50deg));opacity:calc(1 - var(--laco) * 1.15)}
+.laco svg{width:100%;height:auto;display:block;filter:drop-shadow(0 4px 4px rgba(74,21,48,.25))}
+.t-topo{box-shadow:inset 0 0 0 1px rgba(74,21,48,.08),0 calc(var(--plano,0) * 30px) calc(var(--plano,0) * 50px) rgba(74,21,48,calc(var(--plano,0) * .18))}
+.kit3d .caixa3d .t-topo{border-radius:calc(var(--plano,0) * 6px)}
+.kit3d .cena{perspective:calc(1600px + var(--plano,0) * var(--plano,0) * 60000px)}
+.kit3d .chao,.kit3d .p-frente,.kit3d .p-tras,.kit3d .p-esq,.kit3d .p-dir,.kit3d .t-saia{opacity:calc(1 - var(--plano,0) * var(--plano,0))}
+
+/* =================== AJUSTES RESPONSIVOS =================== */
+html,body{overflow-x:clip}
+.periodos label{position:relative}
+.periodos input{width:1px !important;height:1px !important;left:0;top:0;padding:0;margin:0}
+input[type="checkbox"],input[type="radio"]{width:auto}
+@media (max-width:900px){.bento-sobre{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:360px){.bs-num{padding:14px 10px}.bs-num b{font-size:26px}.stat b{font-size:24px}.hero h1{font-size:36px}.btn{padding:14px 16px 14px 20px}}
+
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <nav class="menu-esq" aria-label="Principal">
+      <span class="menu-links">
+        <a href="#procedimentos">Procedimentos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#galeria">Fotos</a>
+        <a href="#curso">Curso</a>
+      </span>
+    </nav>
+    <a class="marca marca-logo" href="#inicio" aria-label="Kauane Zenie, início"><img decoding="async" class="logo-cor" src="assets/img/logo.webp" alt="Kauane Zenie" width="852" height="161"><img decoding="async" class="logo-branco" src="assets/img/logo-branco.webp" alt="" width="852" height="161"></a>
+    <div class="menu-dir">
+      <a class="icone" id="topo-insta" href="https://www.instagram.com/kauanezeniestudio/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor"/></svg>
+      </a>
+      <a class="agendar" href="#agendar">Agendar</a>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= PÁGINA INICIAL ======================= -->
+<main id="pagina-inicio">
+
+  <section class="hero" id="inicio">
+    <div class="hero-foto-wrap">
+      <img decoding="async" class="hero-bg" fetchpriority="high" src="assets/img/hero-olho.webp" alt="Kauane penteando os cílios de uma cliente com uma escovinha" width="1060" height="1600">
+    </div>
+    <div class="hero-veu" aria-hidden="true"></div>
+    <div class="moldura" aria-hidden="true">
+        <span class="lv l1"></span><span class="lv l2"></span><span class="lh h1"></span><span class="lh h2"></span>
+        <span class="quadro"><i class="c1"></i><i class="c2"></i></span>
+        
+    </div>
+    <div class="hero-conteudo">
+      <div class="hero-topo">
+        <p class="hero-local"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Balneário de Ipanema · Pontal do Paraná</p>
+        <p class="hero-intro">Um espaço feminino, dedicado exclusivamente ao seu momento.</p>
+        <div class="hero-assina">
+          <img decoding="async" src="assets/img/avatar.webp" alt="" width="40" height="40">
+          <span><b>Kauane Zenie</b><small>Lash &amp; brow designer</small></span>
+          <span class="sep" aria-hidden="true"></span>
+          <span class="hero-tags"><b><span class="mini-estrelas" aria-hidden="true">★★★★★</span> 5.0 no Google</b><small>+4 anos atendendo</small></span>
+        </div>
+      </div>
+      <div class="hero-base">
+        <p class="hero-local so-celular"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Balneário de Ipanema · Pontal do Paraná</p>
+        <h1>Seu olhar, na sua <em>melhor versão.</em></h1>
+        <p class="hero-sub">Já transformei mais de 500 olhares com extensão de cílios e design de sobrancelhas. Será um prazer cuidar da sua beleza.</p>
+        <div class="ctas">
+          <a class="btn btn-branco" href="#agendar">Agendar horário <span class="seta" aria-hidden="true">›</span></a>
+          <a class="btn btn-contorno" href="#curso">Quero fazer o curso <span class="seta" aria-hidden="true">›</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faixa-stats" aria-label="Destaques">
+    <div class="wrap stats">
+      <div class="stat"><b>5.0<span aria-hidden="true"> ★</span></b><span>no Google</span></div>
+      <div class="stat"><b>+4 anos</b><span>atendendo</span></div>
+      <div class="stat"><b>+500</b><span>olhares transformados</span></div>
+      <div class="stat"><b>1:1</b><span>espaço feminino, só seu</span></div>
+    </div>
+  </section>
+
+  <section id="beneficios">
+    <div class="wrap bento-ben">
+      <div class="ben-foto"><img decoding="async" src="assets/img/res-5.webp" alt="Extensão de cílios feita pela Kauane" loading="lazy"><span class="ben-etq">Resultado real do studio</span></div>
+      <div class="ben-txt">
+        <span class="rotulo">Por que fazer</span>
+        <h2>Acorde com o olhar <em>pronto</em></h2>
+        <ul class="ben-lista">
+          <li><i aria-hidden="true">01</i><div><b>Praticidade no dia a dia</b><span>Menos rímel e curvex, mais tempo livre.</span></div></li>
+          <li><i aria-hidden="true">02</i><div><b>Olhar mais expressivo</b><span>Olhos destacados e atraentes.</span></div></li>
+          <li><i aria-hidden="true">03</i><div><b>Autoestima</b><span>Mais confiança com cílios alongados.</span></div></li>
+          <li><i aria-hidden="true">04</i><div><b>Durabilidade</b><span>Semanas sem retoques diários.</span></div></li>
+          <li><i aria-hidden="true">05</i><div><b>Natural ou glamourosa</b><span>Do efeito discreto ao volumoso.</span></div></li>
+        </ul>
+        <a class="btn btn-vinho" href="#procedimentos">Ver efeitos <span class="seta" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="procedimentos" class="sec-nevoa">
+    <div class="wrap">
+      <div class="cab cab-centro">
+        <span class="rotulo">Procedimentos</span>
+        <h2>Escolha o seu <em>efeito</em></h2>
+        <p>Toque na foto do efeito que você quer e agende pelo WhatsApp.</p>
+      </div>
+      <div class="pular" aria-label="Ir para">
+        <a href="#grupo-cilios">Cílios</a><a href="#grupo-sobr">Sobrancelhas</a>
+      </div>
+      <h3 class="grupo-tit" id="grupo-cilios">Extensão de cílios <small>Atendimento de 1h30 a 2h · Manutenção a cada 15 a 21 dias</small></h3>
+      <div class="efeitos" id="lista-cilios"></div>
+      <h3 class="grupo-tit" id="grupo-sobr">Sobrancelhas</h3>
+      <div class="efeitos" id="lista-sobrancelhas"></div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="cab cab-centro">
+        <span class="rotulo">Como funciona</span>
+        <h2>Simples, do pedido <em>ao resultado</em></h2>
+      </div>
+      <ol class="linha-tempo">
+        <li><span class="bola">1</span><b>Escolha</b><span>o efeito que é a sua cara</span></li>
+        <li><span class="bola">2</span><b>Agende</b><span>pelo site, direto no WhatsApp</span></li>
+        <li><span class="bola">3</span><b>Confirmação</b><span>do horário pela Kauane</span></li>
+        <li><span class="bola">4</span><b>Seu momento</b><span>de 1h30 a 2h, só para você</span></li>
+      </ol>
+
+      <div class="bento-info" id="importante">
+        <div class="info-cab">
+          <span class="rotulo">Antes de agendar</span>
+          <h2>Informações <em>importantes</em></h2>
+          <p>Leia antes do seu horário. Assim o atendimento fica perfeito.</p>
+        </div>
+        <div class="faq">
+          <details open><summary>Pré-atendimento</summary><p>Venha sem maquiagem nos olhos (rímel, delineador, sombra) e sem cremes ou produtos oleosos na região. Se usa lentes de contato, retire antes do procedimento. Fez algum procedimento nos olhos? Avise a profissional.</p></details>
+          <details><summary>Tempo de atendimento</summary><p>O procedimento leva em torno de 1h30 a 2h. Planeje-se com antecedência para evitar atrasos ou remarcações.</p></details>
+          <details><summary>Atrasos</summary><p>Atrasos impactam toda a agenda e os próximos atendimentos. Se a cliente não chegar no horário marcado, será necessário reagendar.</p></details>
+          <details><summary>Cancelamento</summary><p>Cancelamentos devem ser feitos com no mínimo 24 horas de antecedência. Ausência ou cancelamento fora desse prazo tem taxa de R$ 30.</p></details>
+          <details><summary>Manutenção</summary><p>Feita a cada 15 a 21 dias: as extensões soltas são removidas e novos fios aplicados, mantendo o volume e o design. Evite produtos oleosos para durar mais.</p></details>
+          <details><summary>Acompanhantes</summary><p>Não é permitida a presença de acompanhantes. O espaço é um ambiente feminino, dedicado exclusivamente ao momento da cliente.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="agendar" class="sec-nevoa">
+    <div class="wrap agenda">
+      <div class="info">
+        <span class="rotulo">Agendamento</span>
+        <h2>Reserve seu <em>horário</em></h2>
+        <p>Leva menos de um minuto. A mensagem vai pronta para o WhatsApp.</p>
+        <div class="lista">
+          <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><b>Onde fica</b>Rodovia PR 412, 5699, Ipanema, sala 20<br>Balneário de Ipanema, Pontal do Paraná, PR, 83255-000<br><a class="mapa" id="link-mapa" href="#" target="_blank" rel="noopener">Abrir no mapa ↗</a><br><small class="nota">Se preferir, a Kauane envia a localização direto no seu WhatsApp.</small></span></div>
+          <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></span><span><b>Formas de pagamento</b>Pix, dinheiro, crédito e débito (cartão com a taxa da maquininha)</span></div>
+          <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>Cancelamento</b>Até 24h antes. Fora do prazo, taxa de R$ 30.</span></div>
+        </div>
+      
+      </div>
+
+      <form class="caixa" id="form-agenda" novalidate>
+        <div class="campo">
+          <label for="ag-cilios">Cílios</label>
+          <select id="ag-cilios"></select>
+        </div>
+        <div class="campo">
+          <label for="ag-sobr">Sobrancelha</label>
+          <select id="ag-sobr"></select>
+          <small class="dica">Pode escolher cílios e sobrancelha juntos, ou só um dos dois.</small>
+        </div>
+        <fieldset class="campo" id="ag-tipo-box" hidden>
+          <legend>Nos cílios: aplicação ou manutenção?</legend>
+          <div class="periodos">
+            <label><input type="radio" name="tipo" id="tipo-aplicacao" value="Aplicação" checked><span id="tipo-ap-txt">Aplicação</span></label>
+            <label><input type="radio" name="tipo" id="tipo-manutencao" value="Manutenção"><span id="tipo-man-txt">Manutenção</span></label>
+          </div>
+        </fieldset>
+        <div class="campo">
+          <label for="ag-nome">Seu nome</label>
+          <input id="ag-nome" type="text" autocomplete="name" placeholder="Como podemos te chamar?" required>
+        </div>
+        <div class="duas">
+          <div class="campo">
+            <label for="ag-data">Data de preferência</label>
+            <input id="ag-data" type="date">
+          </div>
+          <div class="campo">
+            <label for="ag-primeira">É sua primeira vez?</label>
+            <select id="ag-primeira"><option value="">Selecione</option><option>Sim, primeira vez</option><option>Já sou cliente</option></select>
+          </div>
+        </div>
+        <fieldset class="campo">
+          <legend>Melhor período</legend>
+          <div class="periodos">
+            <label><input type="radio" name="periodo" id="per-manha" value="Manhã"><span>Manhã</span></label>
+            <label><input type="radio" name="periodo" id="per-tarde" value="Tarde" checked><span>Tarde</span></label>
+            <label><input type="radio" name="periodo" id="per-noite" value="Noite"><span>Noite</span></label>
+          </div>
+        </fieldset>
+        <div class="campo">
+          <label for="ag-obs">Observação (opcional)</label>
+          <textarea id="ag-obs" placeholder="Ex.: tenho alergia a algum produto, uso lente de contato..."></textarea>
+        </div>
+        <label class="check"><input type="checkbox" id="ag-local"> Quero receber a localização do studio no WhatsApp</label>
+        <div class="form-acao">
+          <span class="erro" id="ag-erro" role="alert"></span>
+          <a class="btn btn-vinho" id="ag-enviar" href="#agendar" target="_blank" rel="noopener">Enviar pelo WhatsApp <span class="seta" aria-hidden="true">→</span></a>
+        </div>
+        <p class="aviso">O WhatsApp vai abrir com a mensagem pronta. Confira e toque em enviar.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="wrap">
+      <div class="cab">
+        <div><span class="rotulo">Fotos</span><h2>Resultados <em>reais</em></h2><p class="gal-sub">Toque em uma foto para ver em tamanho grande.</p></div>
+        <a class="btn btn-contorno-v" id="link-insta-galeria" href="#" target="_blank" rel="noopener">@kauanezeniestudio <span class="seta" aria-hidden="true">↗</span></a>
+      </div>
+      <div class="galeria">
+        <button type="button" class="g-item" data-src="assets/img/res-2.webp"><img decoding="async" src="assets/img/res-2.webp" alt="Resultado de extensão de cílios feito pela Kauane" loading="lazy"></button>
+        <button type="button" class="g-item" data-src="assets/img/res-6.webp"><img decoding="async" src="assets/img/res-6.webp" alt="Resultado de cílios e sobrancelhas feito pela Kauane" loading="lazy"></button>
+        <button type="button" class="g-item" data-src="assets/img/res-5.webp"><img decoding="async" src="assets/img/res-5.webp" alt="Resultado de extensão de cílios feito pela Kauane" loading="lazy"></button>
+        <button type="button" class="g-item" data-src="assets/img/res-1.webp"><img decoding="async" src="assets/img/res-1.webp" alt="Resultado de cílios e sobrancelhas feito pela Kauane" loading="lazy"></button>
+        <button type="button" class="g-item" data-src="assets/img/res-3.webp"><img decoding="async" src="assets/img/res-3.webp" alt="Resultado de extensão de cílios feito pela Kauane" loading="lazy"></button>
+        <button type="button" class="g-item" data-src="assets/img/res-7.webp"><img decoding="async" src="assets/img/res-7.webp" alt="Resultado de extensão de cílios feito pela Kauane" loading="lazy"></button>
+        <button type="button" class="g-item" data-src="assets/img/res-4.webp"><img decoding="async" src="assets/img/res-4.webp" alt="Resultado de extensão de cílios feito pela Kauane" loading="lazy"></button>
+        <button type="button" class="g-item" data-src="assets/img/res-8.webp"><img decoding="async" src="assets/img/res-8.webp" alt="Resultado de extensão de cílios feito pela Kauane" loading="lazy"></button>
+        <button type="button" class="g-item" data-src="assets/img/n-5d.webp"><img decoding="async" src="assets/img/n-5d.webp" alt="Volume 5D feito pela Kauane" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" style="padding-top:0">
+    <div class="wrap bento-sobre">
+      <div class="bs-foto"><img decoding="async" src="assets/img/kauane-sobre.webp" alt="Kauane Zenie no studio" loading="lazy"></div>
+      <div class="bs-txt">
+        <span class="rotulo">Quem cuida de você</span>
+        <h2>Olá! Sou a <em>Kauane</em></h2>
+        <p>Sou especialista em extensão de cílios e design de sobrancelhas e atuo na área da beleza há mais de 4 anos. Já transformei mais de 500 olhares e meu trabalho é reconhecido com avaliação 5.0 no Google.</p>
+        <p>Também ministro cursos de extensão de cílios, ajudando outras profissionais a se destacarem. Será um prazer cuidar da sua beleza!</p>
+      </div>
+      <div class="bs-num"><b>+4</b><span>anos atendendo</span></div>
+      <div class="bs-num"><b>+500</b><span>olhares transformados</span></div>
+      <div class="bs-num destaque"><b>5.0</b><span>★★★★★ no Google</span></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;padding-bottom:0">
+    <div class="wrap bento-final">
+      <a class="card-curso" href="#curso">
+        <img decoding="async" src="assets/img/aula.webp" alt="" loading="lazy">
+        <span class="cc-veu" aria-hidden="true"></span>
+        <span class="cc-txt">
+          <span class="cc-tag">Curso</span>
+          <b>Aprenda extensão de cílios com a Kauane</b>
+          <span class="cc-link">Conhecer o curso <i aria-hidden="true">→</i></span>
+        </span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= PÁGINA DO CURSO ======================= -->
+<main id="pagina-curso">
+  <section class="curso-capa">
+    <img decoding="async" loading="lazy" class="cc-bg" src="assets/img/aula.webp" alt="Kauane penteando os cílios de uma cliente">
+    <div class="cc-veu2" aria-hidden="true"></div>
+    <div class="cc-conteudo">
+      <a class="voltar-claro" href="#inicio">← Voltar para o studio</a>
+      <div>
+        <span class="cc-selo">Curso individual · 2 dias</span>
+        <h1>Curso de extensão de <em>cílios</em></h1>
+        <p class="cc-sub">Aprenda com acompanhamento exclusivo, da teoria à prática em modelo real, e saia com o seu kit novinho, pronto para começar a atender.</p>
+        <div class="ctas">
+          <a class="btn btn-branco" href="#inscricao">Quero minha vaga <span class="seta" aria-hidden="true">›</span></a>
+          <a class="btn btn-contorno" id="curso-duvida" href="#" target="_blank" rel="noopener">Tirar dúvidas <span class="seta" aria-hidden="true">›</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faixa-stats" aria-label="Destaques do curso">
+    <div class="wrap stats">
+      <div class="stat"><b>1:1</b><span>aula individual</span></div>
+      <div class="stat"><b>2 dias</b><span>inteiros de curso</span></div>
+      <div class="stat"><b>Kit</b><span>certificado e apostila</span></div>
+      <div class="stat"><b>Suporte</b><span>mesmo depois do curso</span></div>
+    </div>
+  </section>
+
+  <section id="conteudo-curso">
+    <div class="wrap">
+      <div class="cab cab-centro">
+        <span class="rotulo">Como é o curso</span>
+        <h2>Teoria e prática, <em>lado a lado</em></h2>
+        <p>Dois dias inteiros só com você, divididos entre teoria e prática.</p>
+      </div>
+      <div class="curso-duo">
+        <div class="duo-card">
+          <span class="duo-tag">Teoria</span>
+          <h3>Os fundamentos para começar</h3>
+          <p>Você aprende os fundamentos da extensão de cílios, as técnicas, os materiais, os cuidados e tudo o que precisa saber para iniciar na área.</p>
+        </div>
+        <div class="duo-card escuro-v">
+          <span class="duo-tag">Prática</span>
+          <h3>Da boneca à modelo real</h3>
+          <p>Começamos com exercícios em boneca e outros treinos para desenvolver suas habilidades e conhecer os materiais. Depois, você aplica em uma modelo real, sempre com a supervisão e o auxílio da Kauane.</p>
+        </div>
+      </div>
+      <ol class="linha-tempo" style="margin:56px 0 0">
+        <li><span class="bola">1</span><b>Teoria</b><span>fundamentos, técnicas e materiais</span></li>
+        <li><span class="bola">2</span><b>Treino</b><span>exercícios em boneca</span></li>
+        <li><span class="bola">3</span><b>Modelo real</b><span>com supervisão da Kauane</span></li>
+        <li><span class="bola">4</span><b>Suporte</b><span>para dúvidas após o curso</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="kit3d" id="caixa" aria-label="Caixa do kit Kauane Zenie">
+    <div class="palco">
+      <div class="k3-txt">
+        <span class="rotulo">Seu kit</span>
+        <h2 id="k3-tit">Uma caixa <em>só sua</em></h2>
+        <p id="k3-sub">Role a página para abrir.</p>
+      </div>
+      <div class="cena">
+        <div class="sombra-caixa" aria-hidden="true"></div>
+        <div class="caixa3d" aria-hidden="true">
+          <div class="fc chao"></div>
+          <div class="fc p-frente"></div>
+          <div class="fc p-tras"></div>
+          <div class="fc p-esq"></div>
+          <div class="fc p-dir"></div>
+          <div class="tampa">
+            <div class="fc t-topo"><img decoding="async" src="assets/img/logo.webp" alt=""><span>LASH DESIGNER</span></div>
+            <div class="fc t-baixo"></div>
+            <div class="fc t-saia"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-nevoa" id="kit">
+    <div class="wrap bento-ben">
+      <div class="ben-foto"><img decoding="async" src="assets/img/kit.webp" alt="Kit de extensão de cílios entregue no curso" loading="lazy"><span class="ben-etq">Seu kit para começar</span></div>
+      <div class="ben-txt" style="background:#fff">
+        <span class="rotulo">O que está incluso</span>
+        <h2>Tudo para você <em>começar</em></h2>
+        <ul class="inclui">
+          <li><b>Certificado e apostila</b></li>
+          <li><b>Kit básico para iniciar na área:</b> pads, fitas, pinças, caixa de cílios, lip gloss, escovinhas, anéis, microbrush, plaquinha de mão, máscara, cola e um mimo especial.</li>
+          <li><b>Suporte</b> para tirar dúvidas mesmo após a conclusão do curso.</li>
+        </ul>
+        <div class="diferencial">
+          <span>Diferencial</span>
+          <p>Todos os materiais usados nas aulas são fornecidos pela Kauane. Você não usa nada do seu kit e termina o curso com tudo novinho, pronto para começar a atender.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="alunas">
+    <div class="wrap">
+      <div class="cab cab-centro">
+        <span class="rotulo">Alunas formadas</span>
+        <h2>Quem já fez o curso <em>com a Kauane</em></h2>
+        <p>Cada aluna sai com certificado, kit completo e pronta para começar a atender.</p>
+      </div>
+      <div class="alunas"><figure class="aluna"><img decoding="async" src="assets/img/aluna-1.webp" alt="Rosemeri Zenie com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Rosemeri Zenie</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-2.webp" alt="Lyllyane Vitória com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Lyllyane Vitória</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-3.webp" alt="Maria Luiza Moreira com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Maria Luiza Moreira</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-4.webp" alt="Twacy Yohana com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Twacy Yohana</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-5.webp" alt="Nicole Cristine dos Santos com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Nicole Cristine dos Santos</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-6.webp" alt="Ana Isabelle Conrado com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Ana Isabelle Conrado</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-7.webp" alt="Allana Gabriele com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Allana Gabriele</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-8.webp" alt="Priscila Camile da Silva com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Priscila Camile da Silva</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-9.webp" alt="Mayra Yasmin Bonifácio com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Mayra Yasmin Bonifácio</b></figcaption></figure></div>
+    </div>
+  </section>
+
+  <section id="investimento">
+    <div class="wrap">
+      <div class="preco-curso">
+        <div>
+          <span class="rotulo" style="color:var(--blush)">Investimento</span>
+          <h2>Curso individual de <em>extensão de cílios</em></h2>
+          <p>2 dias inteiros · certificado · apostila · kit completo · suporte</p>
+        </div>
+        <div class="pc-valor">
+          <span class="pc-num"><small>R$</small>1.000</span>
+          <ul>
+            <li><b>À vista:</b> R$ 1.000,00</li>
+            <li><b>Cartão:</b> até 3x, com a taxa da maquininha</li>
+          </ul>
+          <a class="btn btn-branco" href="#inscricao">Garantir minha vaga <span class="seta" aria-hidden="true">›</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="inscricao" class="sec-nevoa">
+    <div class="wrap agenda">
+      <div class="info">
+        <span class="rotulo">Inscrição</span>
+        <h2>Garanta sua <em>vaga</em></h2>
+        <p>Preencha e envie pelo WhatsApp. A Kauane responde com as datas disponíveis para o seu curso.</p>
+      </div>
+      <form class="caixa" id="form-curso" novalidate>
+        <div class="campo">
+          <label for="cu-nome">Seu nome</label>
+          <input id="cu-nome" type="text" autocomplete="name" placeholder="Seu nome completo" required>
+        </div>
+        <div class="campo">
+          <label for="cu-nivel">Sua experiência</label>
+          <select id="cu-nivel">
+            <option>Nunca trabalhei na área</option>
+            <option>Já atendo e quero me aperfeiçoar</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="cu-pag">Forma de pagamento</label>
+          <select id="cu-pag">
+            <option>À vista (R$ 1.000,00)</option>
+            <option>Cartão em até 3x</option>
+            <option>Ainda não sei</option>
+          </select>
+        </div>
+        <div class="form-acao">
+          <span class="erro" id="cu-erro" role="alert"></span>
+          <a class="btn btn-vinho" id="cu-enviar" href="#inscricao" target="_blank" rel="noopener">Enviar pelo WhatsApp <span class="seta" aria-hidden="true">→</span></a>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="grade">
+      <div>
+        <img decoding="async" class="logo-rodape" src="assets/img/logo.webp" alt="Kauane Zenie" width="852" height="161">
+        <p style="margin-top:12px;max-width:36ch">Extensão de cílios, design de sobrancelhas e curso de extensão de cílios no Balneário de Ipanema, Pontal do Paraná.</p><p style="margin-top:10px;max-width:36ch;font-family:var(--display);font-style:italic;font-size:19px;color:var(--vinho)">Será um prazer cuidar da sua beleza.</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a id="rod-whats" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="rod-insta" href="#" target="_blank" rel="noopener">Instagram @kauanezeniestudio</a>
+        <a id="rod-google" href="#" target="_blank" rel="noopener">Google</a>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <p id="rod-endereco"></p>
+        <p style="margin-top:8px">Pix, dinheiro, crédito e débito</p>
+      </div>
+    </div>
+    <div class="base">© <span id="ano"></span> Kauane Zenie Studio</div>
+  </div>
+</footer>
+
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Foto ampliada"><img decoding="async" loading="lazy" alt="Resultado ampliado"><button type="button" class="z-fechar" aria-label="Fechar">×</button><button type="button" class="z-nav z-ant" aria-label="Foto anterior">‹</button><button type="button" class="z-nav z-prox" aria-label="Próxima foto">›</button><span class="z-cont" id="z-cont"></span></div>
+
+<div class="barra-mobile" id="barra-mobile">
+  <a class="bm-agendar" href="#agendar">Agendar horário</a>
+  <a class="bm-whats" id="bm-whats" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg></a>
+</div>
+
+<a class="flutuante" id="whats-flutuante" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO: troque aqui os dados do studio
+   ========================================================= */
+const CONFIG = {
+  whatsapp: "",            // só números com DDI e DDD, ex.: "5541999999999"
+  instagram: "https://www.instagram.com/kauanezeniestudio/",
+  google: "https://share.google/Z7gnszoKNHTBDWAz5",
+  supabaseUrl: "",          // ex.: "https://xxxx.supabase.co"
+  supabaseKey: "",          // chave publishable (sb_publishable_...)
+  endereco: "Rodovia PR 412, 5699, Ipanema, sala 20, Balneário de Ipanema, Pontal do Paraná, PR, 83255-000"
+};
+
+/* man: true = tem manutenção, null = sem manutenção. Valores são passados pelo WhatsApp. */
+const CILIOS = [
+  {estilo:"natural", id:"classico", curta:"Delicado, natural e elegante.", foto:"assets/img/n-classico.webp", pos:"center",  nome:"Volume clássico",   man:true, desc:"Delicado, natural e elegante, realça o olhar com leveza e sofisticação."},
+  {estilo:"natural", id:"brasileiro", curta:"Curvado, marcante e leve.", foto:"assets/img/n-brasileiro.webp", pos:"center",nome:"Volume brasileiro", man:true, desc:"Curvado e marcante, realça o olhar com expressividade e glamour, sem perder a leveza e a naturalidade."},
+  {estilo:"marcante", id:"egipcio", curta:"Fios alinhados, olhar intenso.", foto:"assets/img/n-egipcio.webp", pos:"center",   nome:"Volume egípcio",    man:true, desc:"Sofisticado e impactante, com fios alinhados que criam um olhar intenso."},
+  {estilo:"marcante", id:"4d", curta:"Cheio, definido e equilibrado.", foto:"assets/img/n-4d.webp", pos:"center",        nome:"Volume 4D",         man:true, desc:"Cheio, definido e equilibrado, para um olhar intenso com leveza. Perfeito para quem busca volume notável."},
+  {estilo:"marcante", id:"5d", curta:"Intenso, denso e glamouroso.", foto:"assets/img/n-5d.webp", pos:"center",        nome:"Volume 5D",         man:true, desc:"Intenso, denso e impactante, cria um olhar marcante e glamouroso. Ideal para quem busca volume e destaque."},
+  {estilo:"marcante duradouro", id:"infinity", curta:"Volume marcante por +30 dias.", foto:"assets/img/n-infinity.webp", pos:"center",  nome:"Volume Infinity",   man:null, desc:"Intenso, aconchegante e durável: olhar marcante e volumoso por mais de 30 dias, com elegância e glamour."},
+  {estilo:"natural marcante", id:"pluma", curta:"Leve, macio e plumado.", foto:"assets/img/n-pluma.webp", pos:"center",     nome:"Volume pluma",      man:true, desc:"Fios leves e macios com efeito plumado, para um volume delicado e cheio de textura."},
+  {estilo:"natural", id:"marrom", curta:"Curvado, em fios castanhos.", foto:"assets/img/n-brasileiro-marrom.webp", pos:"center",    nome:"Brasileiro marrom",     man:true, desc:"Suave e natural, com fios castanhos que trazem leveza e delicadeza para um efeito discreto e elegante."},
+  {estilo:"marcante", id:"egipcio-marrom", curta:"Fios alinhados em tom castanho.", foto:"assets/img/n-egipcio-marrom.webp", pos:"center", nome:"Egípcio marrom", man:true, desc:"O volume egípcio em fios castanhos: olhar intenso e sofisticado, com um efeito mais suave."},
+  {estilo:"delineado", id:"sirena", curta:"Alongado e enigmático.", foto:"", pos:"center",    nome:"Efeito sirena",     man:null, desc:"Alongado na metade externa, cria um olhar sensual e enigmático com efeito puxado e sofisticado."},
+  {estilo:"delineado", id:"fox", curta:"Amendoado, efeito delineado.", foto:"assets/img/n-fox.webp", pos:"center",       nome:"Fox eyes",          man:true, desc:"Alongado e elevado nos cantos externos, cria olhos amendoados com efeito delineado e sensual."}
+];
+const SOBRANCELHAS = [
+  {id:"design", curta:"Formato harmonioso para o seu rosto.", foto:"assets/img/n-design.webp", pos:"center",     nome:"Design de sobrancelha", man:null, unico:true, desc:"Valoriza o seu olhar com um formato harmonioso e equilibrado, que realça a sua beleza natural."},
+  {id:"henna", curta:"Preenche falhas e define.", foto:"assets/img/n-henna.webp", pos:"center",      nome:"Design com henna",      man:null, unico:true, desc:"Preenche falhas e define as sobrancelhas, com efeito natural e duradouro por vários dias."},
+  {id:"lamination", curta:"Fios alinhados, cor natural.", foto:"assets/img/n-lamination-sem.webp", pos:"center", nome:"Brow lamination sem tintura", man:null, unico:true, desc:"Alinha e fixa os fios na direção desejada, deixando a sobrancelha volumosa e penteada, com a cor natural dos seus fios."},
+  {id:"lamination-tintura", curta:"Fios alinhados e mais definidos.", foto:"assets/img/n-lamination-com.webp", pos:"center", nome:"Brow lamination com tintura", man:null, unico:true, desc:"Brow lamination com coloração dos fios, para uma sobrancelha alinhada, volumosa e mais marcada."}
+];
+const TODOS = [...CILIOS, ...SOBRANCELHAS];
+/* ========================================================= */
+
+const $ = s => document.querySelector(s);
+/* salva o pedido no Supabase (se configurado) sem atrapalhar a abertura do WhatsApp */
+function salvarPedido(tabela, dados){
+  if (!CONFIG.supabaseUrl || !CONFIG.supabaseKey) return;
+  try {
+    fetch(CONFIG.supabaseUrl + "/rest/v1/" + tabela, {method:"POST", keepalive:true,
+      headers:{apikey:CONFIG.supabaseKey, "Content-Type":"application/json", Prefer:"return=minimal"},
+      body: JSON.stringify(Object.assign({origem:"site"}, dados))}).catch(() => {});
+  } catch (e) {}
+}
+const waLink = msg => {
+  const base = CONFIG.whatsapp ? "https://wa.me/" + CONFIG.whatsapp : "https://wa.me/";
+  return base + (msg ? "?text=" + encodeURIComponent(msg) : "");
+};
+
+/* tabela de procedimentos + select */
+function linhaPreco(s) {
+  if (s.unico) return "";
+  if (s.man === null) return `<span class="selo-man">Sem manutenção</span>`;
+  return `<span class="selo-man">Com manutenção</span>`;
+}
+function montar(lista, alvo) {
+  alvo.innerHTML = lista.map(s => `
+    <button type="button" class="efeito ef-v2${s.foto ? "" : " sem-foto"}" data-servico="${s.id}">
+      ${s.foto ? `<img decoding="async" src="${s.foto}" alt="" loading="lazy" style="object-position:${s.pos}">` : `<span class="ef-sem-foto" aria-hidden="true">✦</span>`}
+      <span class="ef-sombra" aria-hidden="true"></span>
+      ${s.man === null && !s.unico ? '<em class="ef-selo">Sem manutenção</em>' : ''}
+      <span class="ef-info">
+        <b>${s.nome}</b>
+        <span class="ef-linha"><span class="ef-desc">${s.curta || s.desc}</span><i aria-hidden="true">→</i></span>
+      </span>
+      <span class="sr">Agendar ${s.nome}</span>
+    </button>`).join("");
+}
+montar(CILIOS, $("#lista-cilios"));
+montar(SOBRANCELHAS, $("#lista-sobrancelhas"));
+
+
+
+const selC = $("#ag-cilios"), selS = $("#ag-sobr");
+selC.innerHTML = '<option value="" disabled selected>Escolha seus cílios</option>' + CILIOS.map(s => `<option value="${s.id}">${s.nome}</option>`).join("") + '<option value="duvida">Quero cílios, mas preciso de indicação</option><option value="nao">Não vou querer cílios</option>';
+selS.innerHTML = '<option value="" disabled selected>Escolha sua sobrancelha</option>' + SOBRANCELHAS.map(s => `<option value="${s.id}">${s.nome}</option>`).join("") + '<option value="nao">Não vou querer sobrancelha</option>';
+
+function tipoVisivel() {
+  const s = CILIOS.find(x => x.id === selC.value);
+  const mostra = !!(s && s.man !== null);
+  $("#ag-tipo-box").hidden = !mostra;
+  if (!mostra) $("#tipo-aplicacao").checked = true;
+}
+selC.addEventListener("change", tipoVisivel);
+
+$("#procedimentos").addEventListener("click", e => {
+  const b = e.target.closest("button[data-servico]");
+  if (!b) return;
+  const id = b.dataset.servico;
+  if (CILIOS.some(x => x.id === id)) selC.value = id; else selS.value = id;
+  tipoVisivel(); atualizarAgenda();
+  $("#agendar").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+  setTimeout(() => $("#ag-nome").focus({preventScroll:true}), 500);
+});
+
+/* data mínima = hoje */
+(() => {
+  const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+  $("#ag-data").min = d.toISOString().slice(0, 10);
+})();
+
+/* agendamento -> WhatsApp */
+const btnAg = $("#ag-enviar");
+function msgAgenda() {
+  const procs = [];
+  if (selC.value && selC.value !== "nao") {
+    let c = selC.value === "duvida" ? "Extensão de cílios (quero uma indicação de efeito)" : "Cílios: " + CILIOS.find(x => x.id === selC.value).nome;
+    if (!$("#ag-tipo-box").hidden) c += " (" + document.querySelector('input[name="tipo"]:checked').value + ")";
+    procs.push(c);
+  }
+  if (selS.value && selS.value !== "nao") procs.push("Sobrancelha: " + SOBRANCELHAS.find(x => x.id === selS.value).nome);
+  const nome = $("#ag-nome").value.trim();
+  const data = $("#ag-data").value;
+  const dataBR = data ? data.split("-").reverse().join("/") : "a combinar";
+  const per = (document.querySelector('input[name="periodo"]:checked') || {}).value || "a combinar";
+  const prim = $("#ag-primeira").value;
+  const obs = $("#ag-obs").value.trim();
+  let m = `Olá, Kauane! Vim pelo site e gostaria de agendar um horário.\n\n`;
+  m += `Nome: ${nome}\n${procs.length > 1 ? "Procedimentos:\n- " + procs.join("\n- ") : "Procedimento: " + procs[0]}\nData de preferência: ${dataBR}\nPeríodo: ${per}`;
+  if (prim) m += `\n${prim}`;
+  if (obs) m += `\nObservação: ${obs}`;
+  if ($("#ag-local").checked) m += `\nPode me enviar a localização do studio?`;
+  return {ok: !!(procs.length && nome), m, falta: !procs.length ? "proc" : !nome ? "nome" : ""};
+}
+function atualizarAgenda() {
+  const {ok, m} = msgAgenda();
+  btnAg.href = ok ? waLink(m) : "#agendar";
+  if (ok) $("#ag-erro").textContent = "";
+}
+$("#form-agenda").addEventListener("input", atualizarAgenda);
+$("#form-agenda").addEventListener("change", atualizarAgenda);
+btnAg.addEventListener("click", e => {
+  const {ok, falta} = msgAgenda();
+  if (ok) {
+    const c = selC.value && selC.value !== "nao" ? (selC.value === "duvida" ? "indicação" : CILIOS.find(x => x.id === selC.value).nome) : null;
+    const sb = selS.value && selS.value !== "nao" ? SOBRANCELHAS.find(x => x.id === selS.value).nome : null;
+    salvarPedido("agendamentos", {nome: $("#ag-nome").value.trim(), cilios: c,
+      tipo: !$("#ag-tipo-box").hidden ? document.querySelector('input[name="tipo"]:checked').value : null,
+      sobrancelha: sb, data_preferencia: $("#ag-data").value || null,
+      periodo: (document.querySelector('input[name="periodo"]:checked') || {}).value || null,
+      primeira_vez: $("#ag-primeira").value || null, observacao: $("#ag-obs").value.trim() || null,
+      quer_localizacao: $("#ag-local").checked});
+  }
+  if (!ok) {
+    e.preventDefault();
+    $("#ag-erro").textContent = falta === "proc" ? "Escolha os cílios, a sobrancelha ou os dois." : "Escreva o seu nome.";
+    (falta === "proc" ? selC : $("#ag-nome")).focus();
+  }
+});
+$("#form-agenda").addEventListener("submit", e => e.preventDefault());
+
+/* curso -> WhatsApp */
+const btnCu = $("#cu-enviar");
+function atualizarCurso() {
+  const nome = $("#cu-nome").value.trim();
+  const m = `Olá, Kauane! Vim pelo site e tenho interesse no curso.\n\nNome: ${nome}\nCurso: Extensão de cílios (individual)\nExperiência: ${$("#cu-nivel").value}\nPagamento: ${$("#cu-pag").value}\n\nQuais são as próximas datas disponíveis?`;
+  btnCu.href = nome ? waLink(m) : "#inscricao";
+  if (nome) $("#cu-erro").textContent = "";
+}
+$("#form-curso").addEventListener("input", atualizarCurso);
+$("#form-curso").addEventListener("change", atualizarCurso);
+btnCu.addEventListener("click", e => {
+  if ($("#cu-nome").value.trim()) salvarPedido("inscricoes_curso", {nome: $("#cu-nome").value.trim(), experiencia: $("#cu-nivel").value, pagamento: $("#cu-pag").value});
+  if (!$("#cu-nome").value.trim()) { e.preventDefault(); $("#cu-erro").textContent = "Escreva o seu nome."; $("#cu-nome").focus(); }
+});
+$("#form-curso").addEventListener("submit", e => e.preventDefault());
+
+/* links fixos */
+const msgGeral = "Olá, Kauane! Vim pelo site e gostaria de mais informações.";
+["#whats-flutuante", "#rod-whats", "#bm-whats"].forEach(s => $(s).href = waLink(msgGeral));
+$("#curso-duvida").href = waLink("Olá, Kauane! Vim pelo site e tenho dúvidas sobre o curso.");
+["#rod-insta", "#link-insta-galeria"].forEach(s => $(s).href = CONFIG.instagram);
+$("#rod-google").href = CONFIG.google;
+$("#rod-endereco").textContent = CONFIG.endereco;
+$("#link-mapa").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.endereco);
+$("#ano").textContent = new Date().getFullYear();
+
+/* topo transparente sobre a foto */
+const topo = document.querySelector(".topo");
+function topoEstado(){ topo.classList.toggle("transparente", window.scrollY < 40); document.body.classList.toggle("rolou", window.scrollY > 500); }
+window.addEventListener("scroll", topoEstado, {passive:true});
+
+/* quadrado fixo no olho: converte a área do olho na foto (em pixels da imagem original) para a tela */
+const OLHO = {x: 445, y: 435, w: 290, h: 270};
+function posicionarMoldura(){
+  const hero = document.querySelector(".hero"), img = hero && hero.querySelector(".hero-bg"), mol = hero && hero.querySelector(".moldura");
+  if (!img || !img.naturalWidth || !hero.offsetWidth) return;
+  const hr = hero.getBoundingClientRect(), ir = img.getBoundingClientRect();
+  const cs = getComputedStyle(img), nw = img.naturalWidth, nh = img.naturalHeight;
+  let esc = ir.width / nw, ox = 0, oy = 0;
+  if (cs.objectFit === "cover") {
+    esc = Math.max(ir.width / nw, ir.height / nh);
+    const pos = cs.objectPosition.split(" ").map(v => parseFloat(v) / 100);
+    ox = (ir.width - nw * esc) * (isNaN(pos[0]) ? .5 : pos[0]);
+    oy = (ir.height - nh * esc) * (isNaN(pos[1]) ? .5 : pos[1]);
+  }
+  const k = nw / 1060; /* coordenadas medidas na foto de 1060px */
+  mol.style.setProperty("--fx", (ir.left - hr.left + ox + OLHO.x * k * esc) + "px");
+  mol.style.setProperty("--fy", (ir.top - hr.top + oy + OLHO.y * k * esc) + "px");
+  mol.style.setProperty("--fw", (OLHO.w * k * esc) + "px");
+  mol.style.setProperty("--fh", (OLHO.h * k * esc) + "px");
+}
+const imgHero = document.querySelector(".hero-bg");
+if (imgHero) { imgHero.complete ? posicionarMoldura() : imgHero.addEventListener("load", posicionarMoldura); }
+window.addEventListener("resize", posicionarMoldura);
+if (window.ResizeObserver) new ResizeObserver(posicionarMoldura).observe(document.querySelector(".hero"));
+
+/* caixa 3D animada pela rolagem */
+(() => {
+  const sec = document.getElementById("caixa"); if (!sec) return;
+  const cx = sec.querySelector(".caixa3d"), tit = $("#k3-tit"), sub = $("#k3-sub");
+  const reduz = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const lerp = (a, b, t) => a + (b - a) * t, cl = v => Math.min(1, Math.max(0, v));
+  const ease = t => t < .5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2) / 2;
+  let fase = -1;
+  function pinta(p){
+    const a = ease(cl(p / .45)), c = ease(cl((p - .45) / .5));
+    cx.style.setProperty("--rz", lerp(lerp(-34, -12, a), 0, c) + "deg");
+    cx.style.setProperty("--rx", lerp(lerp(62, 50, a), 0, c) + "deg");
+    cx.style.setProperty("--s", lerp(lerp(.88, .96, a), 1, c));
+    sec.style.setProperty("--plano", c); cx.style.setProperty("--plano", c);
+    const f = p < .3 ? 0 : p < .7 ? 1 : 2;
+    if (f !== fase) { fase = f;
+      tit.innerHTML = ["Uma caixa <em>só sua</em>", "Tudo o que você <em>precisa</em>", "Seu kit, pronto para <em>começar</em>"][f];
+      sub.textContent = ["Role a página para ver.", "Pinças, cílios, cola, fitas, pads e muito mais.", "Seu kit sai novinho: nas aulas, você usa os materiais da Kauane."][f];
+    }
+  }
+  function rolar(){
+    const r = sec.getBoundingClientRect(), tot = r.height - innerHeight;
+    if (!r.height || tot <= 0) return;
+    pinta(cl(-r.top / tot));
+  }
+  if (reduz) { pinta(1); return; }
+  let pend = false;
+  addEventListener("scroll", () => { if (!pend) { pend = true; requestAnimationFrame(() => { pend = false; rolar(); }); } }, {passive:true});
+  addEventListener("hashchange", () => setTimeout(rolar, 50));
+  addEventListener("resize", rolar);
+  rolar();
+})();
+
+/* galeria ampliada com setas, contador e deslizar */
+const zoom = $("#zoom"), fotosGal = [...document.querySelectorAll(".galeria .g-item")].map(b => b.dataset.src);
+let zi = 0;
+function zoomMostra(i){ zi = (i + fotosGal.length) % fotosGal.length; zoom.querySelector("img").src = fotosGal[zi]; $("#z-cont").textContent = (zi + 1) + " de " + fotosGal.length; }
+document.querySelector(".galeria").addEventListener("click", e => {
+  const b = e.target.closest(".g-item"); if (!b) return;
+  zoomMostra(fotosGal.indexOf(b.dataset.src)); zoom.classList.add("aberto"); zoom.querySelector(".z-fechar").focus();
+});
+zoom.addEventListener("click", e => {
+  if (e.target.closest(".z-ant")) return zoomMostra(zi - 1);
+  if (e.target.closest(".z-prox")) return zoomMostra(zi + 1);
+  if (e.target.tagName !== "IMG") zoom.classList.remove("aberto");
+});
+let zx = null;
+zoom.addEventListener("touchstart", e => { zx = e.touches[0].clientX; }, {passive:true});
+zoom.addEventListener("touchend", e => { if (zx === null) return; const d = e.changedTouches[0].clientX - zx; if (Math.abs(d) > 40) zoomMostra(zi + (d < 0 ? 1 : -1)); zx = null; });
+document.addEventListener("keydown", e => {
+  if (!zoom.classList.contains("aberto")) return;
+  if (e.key === "Escape") zoom.classList.remove("aberto");
+  if (e.key === "ArrowRight") zoomMostra(zi + 1);
+  if (e.key === "ArrowLeft") zoomMostra(zi - 1);
+});
+
+/* rotas: #curso abre a página do curso */
+const PAG_CURSO = ["curso", "inscricao", "kit", "investimento", "conteudo-curso", "alunas", "caixa"];
+function rota() {
+  const h = location.hash.replace("#", "");
+  const curso = PAG_CURSO.includes(h);
+  const mudou = document.body.classList.contains("curso") !== curso;
+  document.body.classList.toggle("curso", curso);
+  document.title = curso ? "Curso | Kauane Zenie Studio" : "Kauane Zenie Studio";
+  if (h === "curso" || h === "inicio" || (mudou && !h)) { window.scrollTo(0, 0); return; }
+  const alvo = h && document.getElementById(h);
+  if (alvo && mudou) alvo.scrollIntoView();
+}
+window.addEventListener("hashchange", () => { rota(); topoEstado(); posicionarMoldura(); });
+rota(); topoEstado(); posicionarMoldura();
+</script>
+</body>
+</html>
