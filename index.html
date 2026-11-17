@@ -34,6 +34,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html.lenis{scroll-behavior:auto}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{margin:0;background:var(--creme);color:var(--tinta);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
@@ -805,6 +806,29 @@ input[type="checkbox"],input[type="radio"]{width:auto}
 @media (max-width:900px){.bento-sobre{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:360px){.bs-num{padding:14px 10px}.bs-num b{font-size:26px}.stat b{font-size:24px}.hero h1{font-size:36px}.btn{padding:14px 16px 14px 20px}}
 
+
+/* =================== MOVIMENTO =================== */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+.lenis.lenis-stopped{overflow:hidden}
+:root{--suave:cubic-bezier(.22,.7,.18,1)}
+html.anim .rv{opacity:0;transform:translateY(26px);transition:opacity 1s var(--suave),transform 1s var(--suave);transition-delay:var(--d,0ms);will-change:opacity,transform}
+html.anim .rv.vis{opacity:1;transform:none}
+html.anim .rv-img{clip-path:inset(8% 6% 8% 6% round 24px);transition:clip-path 1.2s var(--suave),opacity 1s var(--suave),transform 1.2s var(--suave);transition-delay:var(--d,0ms)}
+html.anim .rv-img.vis{clip-path:inset(0 0 0 0 round 0)}
+@keyframes sobe{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes zoomSuave{from{transform:scale(1.07)}to{transform:scale(1)}}
+html.anim .hero-bg{animation:zoomSuave 2.4s var(--suave) both}
+html.anim .hero-topo,html.anim .hero-base>*,html.anim .cc-conteudo>*{animation:sobe 1.1s var(--suave) both}
+html.anim .hero-topo{animation-delay:.25s}
+html.anim .hero-base>*:nth-child(1){animation-delay:.35s}
+html.anim .hero-base>*:nth-child(2){animation-delay:.45s}
+html.anim .hero-base>*:nth-child(3){animation-delay:.55s}
+html.anim .hero-base>*:nth-child(4){animation-delay:.65s}
+html.anim .moldura .quadro{animation:sobe 1.2s var(--suave) .8s both}
+html.anim .moldura .lv,html.anim .moldura .lh{animation:linha 1.6s var(--suave) .6s both}
+@keyframes linha{from{opacity:0}to{opacity:1}}
+.btn,.efeito,.g-item,.aluna,.card-curso{transition-timing-function:var(--suave)}
 </style>
 </head>
 <body>
@@ -902,7 +926,7 @@ input[type="checkbox"],input[type="radio"]{width:auto}
       <div class="pular" aria-label="Ir para">
         <a href="#grupo-cilios">Cílios</a><a href="#grupo-sobr">Sobrancelhas</a>
       </div>
-      <h3 class="grupo-tit" id="grupo-cilios">Extensão de cílios <small>Atendimento de 1h30 a 2h · Manutenção a cada 15 a 21 dias</small></h3>
+      <h3 class="grupo-tit" id="grupo-cilios">Extensão de cílios <small>Atendimento de 1h30 a 2h · Manutenção a cada 21 a 30 dias</small></h3>
       <div class="efeitos" id="lista-cilios"></div>
       <h3 class="grupo-tit" id="grupo-sobr">Sobrancelhas</h3>
       <div class="efeitos" id="lista-sobrancelhas"></div>
@@ -933,7 +957,7 @@ input[type="checkbox"],input[type="radio"]{width:auto}
           <details><summary>Tempo de atendimento</summary><p>O procedimento leva em torno de 1h30 a 2h. Planeje-se com antecedência para evitar atrasos ou remarcações.</p></details>
           <details><summary>Atrasos</summary><p>Atrasos impactam toda a agenda e os próximos atendimentos. Se a cliente não chegar no horário marcado, será necessário reagendar.</p></details>
           <details><summary>Cancelamento</summary><p>Cancelamentos devem ser feitos com no mínimo 24 horas de antecedência. Ausência ou cancelamento fora desse prazo tem taxa de R$ 30.</p></details>
-          <details><summary>Manutenção</summary><p>Feita a cada 15 a 21 dias: as extensões soltas são removidas e novos fios aplicados, mantendo o volume e o design. Evite produtos oleosos para durar mais.</p></details>
+          <details><summary>Manutenção</summary><p>Feita a cada 21 a 30 dias: as extensões soltas são removidas e novos fios aplicados, mantendo o volume e o design. Evite produtos oleosos para durar mais.</p></details>
           <details><summary>Acompanhantes</summary><p>Não é permitida a presença de acompanhantes. O espaço é um ambiente feminino, dedicado exclusivamente ao momento da cliente.</p></details>
         </div>
       </div>
@@ -948,6 +972,7 @@ input[type="checkbox"],input[type="radio"]{width:auto}
         <p>Leva menos de um minuto. A mensagem vai pronta para o WhatsApp.</p>
         <div class="lista">
           <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><b>Onde fica</b>Rodovia PR 412, 5699, Ipanema, sala 20<br>Balneário de Ipanema, Pontal do Paraná, PR, 83255-000<br><a class="mapa" id="link-mapa" href="#" target="_blank" rel="noopener">Abrir no mapa ↗</a><br><small class="nota">Se preferir, a Kauane envia a localização direto no seu WhatsApp.</small></span></div>
+          <div><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></span><span><b>WhatsApp do studio</b><a class="mapa" id="info-whats" href="https://wa.me/5541998047493" target="_blank" rel="noopener">(41) 99804-7493</a></span></div>
           <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></span><span><b>Formas de pagamento</b>Pix, dinheiro, crédito e débito (cartão com a taxa da maquininha)</span></div>
           <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>Cancelamento</b>Até 24h antes. Fora do prazo, taxa de R$ 30.</span></div>
         </div>
@@ -1022,7 +1047,6 @@ input[type="checkbox"],input[type="radio"]{width:auto}
         <button type="button" class="g-item" data-src="assets/img/res-7.webp"><img decoding="async" src="assets/img/res-7.webp" alt="Resultado de extensão de cílios feito pela Kauane" loading="lazy"></button>
         <button type="button" class="g-item" data-src="assets/img/res-4.webp"><img decoding="async" src="assets/img/res-4.webp" alt="Resultado de extensão de cílios feito pela Kauane" loading="lazy"></button>
         <button type="button" class="g-item" data-src="assets/img/res-8.webp"><img decoding="async" src="assets/img/res-8.webp" alt="Resultado de extensão de cílios feito pela Kauane" loading="lazy"></button>
-        <button type="button" class="g-item" data-src="assets/img/n-5d.webp"><img decoding="async" src="assets/img/n-5d.webp" alt="Volume 5D feito pela Kauane" loading="lazy"></button>
       </div>
     </div>
   </section>
@@ -1164,7 +1188,7 @@ input[type="checkbox"],input[type="radio"]{width:auto}
         <h2>Quem já fez o curso <em>com a Kauane</em></h2>
         <p>Cada aluna sai com certificado, kit completo e pronta para começar a atender.</p>
       </div>
-      <div class="alunas"><figure class="aluna"><img decoding="async" src="assets/img/aluna-1.webp" alt="Rosemeri Zenie com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Rosemeri Zenie</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-2.webp" alt="Lyllyane Vitória com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Lyllyane Vitória</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-3.webp" alt="Maria Luiza Moreira com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Maria Luiza Moreira</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-4.webp" alt="Twacy Yohana com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Twacy Yohana</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-5.webp" alt="Nicole Cristine dos Santos com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Nicole Cristine dos Santos</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-6.webp" alt="Ana Isabelle Conrado com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Ana Isabelle Conrado</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-7.webp" alt="Allana Gabriele com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Allana Gabriele</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-8.webp" alt="Priscila Camile da Silva com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Priscila Camile da Silva</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-9.webp" alt="Mayra Yasmin Bonifácio com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Mayra Yasmin Bonifácio</b></figcaption></figure></div>
+      <div class="alunas"><figure class="aluna"><img decoding="async" src="assets/img/aluna-1.webp" alt="Rosemeri Zenie com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Rosemeri Zenie</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-2.webp" alt="Lydyane Vitória com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Lydyane Vitória</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-3.webp" alt="Maria Luiza Moreira com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Maria Luiza Moreira</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-4.webp" alt="Twacy Yohana com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Twacy Yohana</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-5.webp" alt="Nicole Cristine dos Santos com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Nicole Cristine dos Santos</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-6.webp" alt="Gabrielly Conrado com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Gabrielly Conrado</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-7.webp" alt="Allana Gabriele com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Allana Gabriele</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-8.webp" alt="Priscila Camile da Silva com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Priscila Camile da Silva</b></figcaption></figure><figure class="aluna"><img decoding="async" src="assets/img/aluna-9.webp" alt="Mayra Yasmin Bonifácio com o certificado do curso de extensão de cílios" loading="lazy"><figcaption><b>Mayra Yasmin Bonifácio</b></figcaption></figure></div>
     </div>
   </section>
 
@@ -1233,7 +1257,7 @@ input[type="checkbox"],input[type="radio"]{width:auto}
       </div>
       <div>
         <h4>Contato</h4>
-        <a id="rod-whats" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="rod-whats" href="#" target="_blank" rel="noopener">WhatsApp (41) 99804-7493</a>
         <a id="rod-insta" href="#" target="_blank" rel="noopener">Instagram @kauanezeniestudio</a>
         <a id="rod-google" href="#" target="_blank" rel="noopener">Google</a>
       </div>
@@ -1263,7 +1287,7 @@ input[type="checkbox"],input[type="radio"]{width:auto}
    CONFIGURAÇÃO: troque aqui os dados do studio
    ========================================================= */
 const CONFIG = {
-  whatsapp: "",            // só números com DDI e DDD, ex.: "5541999999999"
+  whatsapp: "5541998047493",
   instagram: "https://www.instagram.com/kauanezeniestudio/",
   google: "https://share.google/Z7gnszoKNHTBDWAz5",
   supabaseUrl: "https://ezcbuevmmfxugwfupoqg.supabase.co",
@@ -1295,6 +1319,9 @@ const TODOS = [...CILIOS, ...SOBRANCELHAS];
 /* ========================================================= */
 
 const $ = s => document.querySelector(s);
+const MOV = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+function irPara(el){ if (!el) return; if (window.__lenis) window.__lenis.scrollTo(el, {offset:-76, duration:1.3}); else el.scrollIntoView({behavior: MOV ? "smooth" : "auto"}); }
+function topoJa(){ if (window.__lenis) window.__lenis.scrollTo(0, {immediate:true, force:true}); window.scrollTo(0, 0); }
 /* salva o pedido no Supabase (se configurado) sem atrapalhar a abertura do WhatsApp */
 function salvarPedido(tabela, dados){
   if (!CONFIG.supabaseUrl || !CONFIG.supabaseKey) return;
@@ -1351,7 +1378,7 @@ $("#procedimentos").addEventListener("click", e => {
   const id = b.dataset.servico;
   if (CILIOS.some(x => x.id === id)) selC.value = id; else selS.value = id;
   tipoVisivel(); atualizarAgenda();
-  $("#agendar").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+  irPara($("#agendar"));
   setTimeout(() => $("#ag-nome").focus({preventScroll:true}), 500);
 });
 
@@ -1531,12 +1558,50 @@ function rota() {
   const mudou = document.body.classList.contains("curso") !== curso;
   document.body.classList.toggle("curso", curso);
   document.title = curso ? "Curso | Kauane Zenie Studio" : "Kauane Zenie Studio";
-  if (h === "curso" || h === "inicio" || (mudou && !h)) { window.scrollTo(0, 0); return; }
+  if (h === "curso" || h === "inicio" || (mudou && !h)) { topoJa(); return; }
   const alvo = h && document.getElementById(h);
-  if (alvo && mudou) alvo.scrollIntoView();
+  if (alvo && mudou) { if (window.__lenis) window.__lenis.scrollTo(alvo, {offset:-76, immediate:true}); else alvo.scrollIntoView(); }
 }
 window.addEventListener("hashchange", () => { rota(); topoEstado(); posicionarMoldura(); });
 rota(); topoEstado(); posicionarMoldura();
+</script>
+
+<script src="assets/js/lenis.min.js"></script>
+<script>
+/* rolagem fluida + entradas suaves */
+(() => {
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (window.Lenis) {
+      const lenis = new Lenis({duration: 1.15, easing: t => 1 - Math.pow(1 - t, 3), smoothWheel: true});
+      window.__lenis = lenis;
+      const raf = t => { lenis.raf(t); requestAnimationFrame(raf); }; requestAnimationFrame(raf);
+      document.addEventListener("click", e => {
+        const a = e.target.closest('a[href^="#"]'); if (!a) return;
+        const id = a.getAttribute("href").slice(1); if (!id) return;
+        const paginas = ["curso","inscricao","kit","investimento","conteudo-curso","alunas","caixa"];
+        const naCurso = document.body.classList.contains("curso");
+        if (paginas.includes(id) !== naCurso || (id === "inicio" && naCurso)) return; /* troca de página: deixa a rota agir */
+        const el = document.getElementById(id); if (!el || !el.offsetParent && el !== document.body) return;
+        e.preventDefault(); history.replaceState(null, "", "#" + id);
+        if (id === "inicio") lenis.scrollTo(0, {duration: 1.3}); else lenis.scrollTo(el, {offset: -76, duration: 1.3});
+      });
+    }
+    if ("IntersectionObserver" in window) {
+      document.documentElement.classList.add("anim");
+      const alvos = ".cab, .stat, .ben-txt, .grupo-tit, .pular, .efeito, .linha-tempo li, .info-cab, .faq details, .agenda .info, form.caixa, .bs-txt, .bs-num, .duo-card, .preco-curso, .k3-txt, footer .grade > div, .curso-duo, .inclui li, .diferencial";
+      const imgs = ".ben-foto, .g-item, .bs-foto, .card-curso, .aluna";
+      const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add("vis"); io.unobserve(en.target); } }), {rootMargin: "0px 0px -8% 0px", threshold: .08});
+      const marcar = (sel, cls) => document.querySelectorAll(sel).forEach(el => {
+        if (el.classList.contains("rv")) return;
+        const irmaos = [...el.parentElement.children].filter(x => x.matches(sel));
+        el.style.setProperty("--d", Math.min(irmaos.indexOf(el), 5) * 80 + "ms");
+        el.classList.add("rv", cls); io.observe(el);
+      });
+      const tudo = () => { marcar(alvos, "rv-txt"); marcar(imgs, "rv-img"); };
+      tudo(); addEventListener("hashchange", () => setTimeout(tudo, 30));
+    }
+  }
+})();
 </script>
 </body>
 </html>
