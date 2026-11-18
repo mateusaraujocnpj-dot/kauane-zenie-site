@@ -14,9 +14,15 @@
 <meta property="og:image" content="assets/img/hero-olho.webp">
 <meta property="og:locale" content="pt_BR">
 <link rel="preload" as="image" href="assets/img/hero-olho.webp" fetchpriority="high">
+<style>
+@font-face{font-family:"Playfair Display";font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/playfair-display-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-style:italic;font-weight:500;font-display:swap;src:url(assets/fonts/playfair-display-latin-500-italic.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/playfair-display-latin-600-normal.woff2) format("woff2")}
+</style>
+<link rel="preload" href="assets/fonts/playfair-display-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&family=Poiret+One&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Poiret+One&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
 <style>
 /* Layout: base branca, bordô só em detalhes (títulos em itálico, botões, linhas, bloco de avaliação); hero com foto e véu branco; página do curso em #curso */
 :root{
@@ -27,7 +33,7 @@
   --creme:#F7EFEC;
   --tinta:#3B1A28;
   --linha:rgba(74,21,48,.14);
-  --display:"Bodoni Moda", "Didot", "Times New Roman", serif;
+  --display:"Playfair Display", "Didot", "Times New Roman", serif;
   --logo:"Poiret One", "Jost", sans-serif;
   --body:"Jost", "Helvetica Neue", Arial, sans-serif;
   color-scheme: light;
@@ -829,6 +835,11 @@ html.anim .moldura .quadro{animation:sobe 1.2s var(--suave) .8s both}
 html.anim .moldura .lv,html.anim .moldura .lh{animation:linha 1.6s var(--suave) .6s both}
 @keyframes linha{from{opacity:0}to{opacity:1}}
 .btn,.efeito,.g-item,.aluna,.card-curso{transition-timing-function:var(--suave)}
+
+/* fonte de títulos: Playfair com peso 500, traço fino mais visível */
+h1,h2,h3,h4,.ef-info b,.ef-corpo b,.aluna figcaption b,.vm b,.stat b,.bs-num b,.numeros b,.pc-num,.passo .n,.ben .n,.grupo-tit,.estilos-tit,.bola,.linha-tempo b,.cc-txt b,.tag strong,summary,.preco-card h4,.k3-txt h2{font-weight:500 !important}
+h1 em,h2 em,h3 em{font-weight:500}
+h1,h2{letter-spacing:-.015em}
 </style>
 </head>
 <body>
